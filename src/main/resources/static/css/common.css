@@ -1,0 +1,21 @@
+
+body { background-color: #EEE; margin: 0; text-align: center; padding-bottom: 20px; }
+
+header { z-index: 99; position: fixed; top:0; width: 100%; background-color: #3C3530; padding: 20px 0; border-bottom:  1px solid #4FAB65; }
+header div.header-left { display: inline-block; width: 49%; text-align: left; }
+header div.header-left span { font-size: 20px; color: #FFFFF3; }
+header div.header-right { display: inline-block; width: 49%; text-align: right; }
+
+section { padding-top: 100px; }
+section > div { padding: 25px; display: inline-block; margin-bottom: 30px; width: 950px; background-color: #DDD; text-align: left; border-radius: 3px; border: 1px solid #888; box-shadow: 2px 2px 2px 2px #AAA; }
+
+section div.title { font-size: 30px; font-family: cursive; padding: 10px 0 20px 5px; }
+section div.title span { box-shadow: 2px 2px 2px 2px grey; padding: 5px;  background-color: #EEE; }
+
+section div.panel-1 { position: relative; display: inline-block; margin: 5px 5px; border: 1px solid #77AF9C; border-radius: 3px; width: 300px; height: 320px; background-color: #EEE;  box-shadow: 1px 1px 1px 1px #AAA; }
+section div.panel-1:hover { border: 1px solid #333; background-color: #CCC; transition-duration: 0.5s; }
+section div.panel-1 img { position: absolute; top: 10%; left: 5%; width: 90%; max-height: 300px; border: 1px solid #285943; border-radius: 3px; background-color: #FFF; }
+section div.panel-1 button { position: absolute; bottom: 10px; left: 5%; width: 90%; }
+
+.button-type-1 { font-size: 15px; border: 1px solid #285943; padding: 10px 30px; background-color: #D7FFF1; border-radius: 3px; cursor: pointer; }
+.button-type-1:hover { background-color: #C6EEE0; border: 1px solid #4FAB65; transition-duration: 0.5s; }

@@ -1,0 +1,128 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/commonHead::commonHead"></head>
+
+<style type="text/css">
+	span.icono-mail, span.icono-display { color: #333; }
+
+	section div.panel-1 { width: 100%; height: auto; }
+
+	div.panel-1 table { margin: 20px; }
+	div.panel-1 table tr th { text-align: center; }
+	div.panel-1 table tr td { padding-left: 10px; }
+
+	div.panel-1 table.info { border-collapse: collapse; width: 900px; text-align: center; font-size: 13px; margin: 25px; }
+	div.panel-1 table.info tr th, div.panel-1 table.info tr td { border: 1px solid #EAEAEA; padding: 10px; }
+	div.panel-1 table.info tr th { background-color: #3C3530; color: #FFF; }
+	div.panel-1 table.info tr td { background-color: #FFFFFF; }
+
+	section div.panel-1 img.profile-img { position: inherit; top: auto; left: auto; width: 100px; height: 140px; border: 1px solid #333; background-color: #333; border-radius: 5px; }
+
+	span.title { display: inline-block; margin: 10px 0 0 20px; font-size: 18px; font-weight: bold; padding-bottom: 10px; border-bottom: 2px solid #333;}
+</style>
+
+<body>
+	<header>
+		<div class="header-left"><span>Kim Dong Ju</span></div>
+		<div class="header-right"><button class="button-type-1">Contact</button></div>
+	</header>
+	<section>
+		<div>
+			<div class="title">
+				<span>&lt; Resume /&gt;</span>
+			</div>
+
+			<div class="panel-1">
+				<table>
+					<tr>
+						<td rowspan="4">
+							<img class="profile-img" src="https://www.saramin.co.kr/zf_user/persons/picture?idx=8687659|2787c7e9dbc6d04911032750aa68cf92aafc5ed5df986f5dc9d43484b83e13d7">
+						</td>
+						<td>
+							<b>김동주</b>&nbsp;|
+							<span>91년생</span>&nbsp;|
+							<span>남</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="icono-mail"></span>
+							djkim1991@naver.com
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="icono-display"></span>
+							https://github.com/djkim1991
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="icono-display"></span>
+							https://dororongju.tistory.com/
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="panel-1">
+				<span class="title">학력</span>
+				<table class="info">
+					<colgroup>
+						<col style="width: 200px;">
+						<col style="width: 80px;">
+						<col style="width: 200px;">
+					</colgroup>
+					<tr>
+						<th>재학기간</th>
+						<th colspan="2">구분</th>
+						<th>전공</th>
+					</tr>
+					<tr>
+						<td>2018/09</td>
+						<td>재학중</td>
+						<td>특수 대학원</td>
+						<td>인공지능 공학과</td>
+					</tr>
+					<tr>
+						<td>2010/03 ~ 2017/02</td>
+						<td>졸업</td>
+						<td>대학교</td>
+						<td>컴퓨터과학과</td>
+					</tr>
+					<tr>
+						<td>207/03 ~ 2010/02</td>
+						<td>졸업</td>
+						<td>고등학교</td>
+						<td>이과계열</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="panel-1">
+				<span class="title">자격증</span>
+				<table class="info">
+					<colgroup>
+						<col style="width: 100px;">
+						<col style="width: 150px;">
+						<col>
+						<col style="width: 100px;">
+					</colgroup>
+					<tr>
+						<th>취득일</th>
+						<th>자격</th>
+						<th>발행기관</th>
+						<th>합격</th>
+					</tr>
+					<tr>
+						<td>2016/07</td>
+						<td>정보처리기사</td>
+						<td>한국산업인력공단</td>
+						<td>최종합격</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

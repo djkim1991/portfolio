@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/commonHead::commonHead"></head>
+
+<style type="text/css">
+	section div.panel-1 { height: 250px; }
+</style>
+
+<body>
+	<header>
+		<div class="header-left"><span>Kim Dong Ju</span></div>
+		<div class="header-right"><button class="button-type-1">Contact</button></div>
+	</header>
+	<section>
+		<div>
+			<div class="title">
+				<span>&lt; Web Socket /&gt;</span>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/ktedu.PNG}">
+				<button class="button-type-1">CHAT</button>
+			</div>
+		</div>
+
+		<div>
+			<div class="title">
+				<span>&lt; Mini Game /&gt;</span>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/ktedu.PNG}">
+				<button class="button-type-1">SNAK GAME</button>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

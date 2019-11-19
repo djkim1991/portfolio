@@ -1,0 +1,35 @@
+################### JPA Configuration ##########################
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 100
+        one-indexed-parameters: true
+        page-parameter: pageNo
+        prefix: ''
+        qualifier-delimiter: _
+        size-parameter: pageSize
+      sort:
+        sort-parameter: sort
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.99.100:5432/springboot
+    username: postgres
+    password: passs

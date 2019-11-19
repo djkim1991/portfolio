@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/commonHead::commonHead"></head>
+
+<style type="text/css">
+	section div.panel-1 { height: 250px; }
+</style>
+
+<body>
+	<header>
+		<div class="header-left"><span>Kim Dong Ju</span></div>
+		<div class="header-right"><button class="button-type-1">Contact</button></div>
+	</header>
+	<section>
+		<div>
+			<div class="title">
+				<span>&lt; Projects /&gt;</span>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/ktedu.PNG}">
+				<button class="button-type-1">KT그룹교육포털</button>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/refund.PNG}">
+				<button class="button-type-1">에너지 관리공단 환급사업</button>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/JN.PNG}">
+				<button class="button-type-1" style="cursor: auto;">전남 CMS</button>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/anyfood.PNG}">
+				<button class="button-type-1">애니푸드</button>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/thelounge.PNG}">
+				<button class="button-type-1">더라운지 멤버스</button>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/sibf.jpg}">
+				<button class="button-type-1">서울국제도서전</button>
+			</div>
+
+			<div class="panel-1">
+				<img th:src="@{/images/career/gg.PNG}">
+				<button class="button-type-1">공감</button>
+			</div>
+
+		</div>
+	</section>
+</body>
+</html>
