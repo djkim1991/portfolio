@@ -1,4 +1,4 @@
-package com.dongju.portfolio.controller.web.portfolio;
+package com.dongju.portfolio.controller.web.portfolio.skills;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Slf4j
-@RequestMapping("/career")
-public class CareerController {
+@RequestMapping("/skills")
+public class SkillsController {
 
     @GetMapping(value = {"", "/"})
     public String main(Model model) {
 
-        return "portfolio/career";
+        return "portfolio/skills/skills";
     }
 }

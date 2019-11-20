@@ -1,5 +1,5 @@
 
-//
+// move to url
 $(document).on('click', 'button', function () {
     const url = $(this).data('url');
     const windowOpenUrl = $(this).data('window-open-url');

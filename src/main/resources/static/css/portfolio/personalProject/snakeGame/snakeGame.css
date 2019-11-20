@@ -1,0 +1,19 @@
+div.game { text-align: center; }
+div.game div.info { display: inline-block; padding: 5px; text-align: right; width: 295px; }
+div.game div.info button#startBtn { border: 1px solid #888; padding: 3px 10px; border-radius: 3px; color: #888; font-size: 14px; background-color: #4B9BFF; border: 1px solid #0757DD; color: #FFF; cursor: pointer; }
+div.game div.info button#startBtn:hover { background-color: #2979DD; }
+
+div.game #snakeTable { border-collapse: collapse; display: inline-block; }
+div.game #snakeTable td { border: 1px solid blue; width: 13px; height: 13px; }
+div.game #snakeTable td.snake { background-color: #5AAFFF; }
+div.game #snakeTable td.food { background-color: #CCCCCC; }
+
+div.controller { text-align: center; }
+div.controller table { border-collapse: collapse; display: inline-block; margin-top: 20px; }
+div.controller table td { text-align: center; font-size: 20pt; color: white; }
+div.controller table td.btn { width: 50px; height: 50px; background-color: #CCC; border: 2px solid #888; }
+div.controller table td.btn.on { background-color: #888; }
+
+section div.panel-1 { width: 45%; height: auto; padding: 30px 0;}
+section div.panel-1:hover { background-color: #EEE; }
+section div.panel-1 button { position: inherit; bottom: inherit; left: inherit; width: auto; }
