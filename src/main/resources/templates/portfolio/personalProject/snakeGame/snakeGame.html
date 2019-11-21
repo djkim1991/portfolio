@@ -22,7 +22,6 @@
 					<div class='game'>
 						<div class="info">
 							<button id='startBtn'>시작</button>
-							<button id='saveScoreBtn'>점수 저장</button>
 							<span class="info grey">점수 : <span id='score'>0</span></span>
 						</div>
 						<div>
@@ -46,22 +45,15 @@
 			</div>
 
 			<div class="panel-1">
-				<span>Record</span>
+				<div class="title">Ranking</div>
 				<ul>
-					<li>
-						<span>1등</span>
-						<span>김동주</span>
-						<span>10점</span>
+					<li th:each="gameScoreDto, iter:${gameScoreDtoList}">
+						<span th:text="${iter}"></span>
+						<span th:text="${gameScoreDto.getScore()}"></span>
+						<span th:text="${gameScoreDto.getNickName()}"></span>
 					</li>
-					<li>
-						<span>1등</span>
-						<span>김동주</span>
-						<span>10점</span>
-					</li>
-					<li>
-						<span>1등</span>
-						<span>김동주</span>
-						<span>10점</span>
+					<li th:if="${gameScoreDtoList.size() == 0}">
+						<span>등록된 순위 정보가 없습니다.</span>
 					</li>
 				</ul>
 			</div>

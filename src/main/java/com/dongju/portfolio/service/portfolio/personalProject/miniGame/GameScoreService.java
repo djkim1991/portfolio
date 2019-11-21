@@ -8,6 +8,8 @@ import java.util.List;
 public interface GameScoreService {
     List<GameScoreDto> list();
     GameScoreDto findByUid(Long uid);
-    void save(GameScoreDto chatRoomDto);
+    Long count();
+    void save(GameScoreDto gameScoreDto);
     void deleteByUid(Long uid);
+    void deleteOutOfRanking();
 }

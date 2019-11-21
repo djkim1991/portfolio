@@ -2,7 +2,9 @@ package com.dongju.portfolio.controller.rest.portfolio.personalProject;
 
 import com.dongju.portfolio.domain.common.AjaxResponse;
 import com.dongju.portfolio.domain.dto.portfolio.personalProject.chat.ChatRoomDto;
+import com.dongju.portfolio.domain.dto.portfolio.personalProject.miniGame.GameScoreDto;
 import com.dongju.portfolio.service.portfolio.personalProject.chat.ChatRoomService;
+import com.dongju.portfolio.service.portfolio.personalProject.miniGame.GameScoreService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestPersonalProjectController {
 
     private final ChatRoomService chatRoomService;
+    private final GameScoreService gameScoreService;
 
     @PostMapping(value = {"/chat/createChatRoom"})
     public ResponseEntity createChatRoom(String roomName) {
@@ -41,6 +44,28 @@ public class RestPersonalProjectController {
                     .resultMsg("성공적으로 방을 생성했습니다.")
                     .build();
         }
+
+        return ResponseEntity.ok().body(ajaxResponse);
+    }
+
+    @PostMapping(value = {"/miniGame/saveScore"})
+    public ResponseEntity saveScore(Integer score, String gameName, String nickName) {
+        AjaxResponse ajaxResponse;
+
+        GameScoreDto gameScoreDto = GameScoreDto.builder()
+                .score(score)
+                .gameName(gameName)
+                .nickName(nickName)
+                .build();
+
+        gameScoreService.save(gameScoreDto);
+
+        gameScoreService.deleteOutOfRanking();
+
+        ajaxResponse = AjaxResponse.builder()
+                .result("success")
+                .resultMsg("등 입니다.")
+                .build();
 
         return ResponseEntity.ok().body(ajaxResponse);
     }

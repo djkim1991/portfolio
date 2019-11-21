@@ -42,6 +42,11 @@ public class GameScoreServiceImpl implements GameScoreService {
     }
 
     @Override
+    public Long count() {
+        return gameScoreRepository.count();
+    }
+
+    @Override
     public void save(GameScoreDto gameScoreDto) {
 
         gameScoreRepository.save(modelMapper.map(gameScoreDto, GameScore.class));
@@ -50,5 +55,12 @@ public class GameScoreServiceImpl implements GameScoreService {
     @Override
     public void deleteByUid(Long uid) {
         gameScoreRepository.deleteById(uid);
+    }
+
+    @Override
+    public void deleteOutOfRanking() {
+        List<GameScore> gameScoreList = gameScoreRepository.findTop10ByOrderByScoreDesc();
+        gameScoreRepository.deleteAll();
+        gameScoreRepository.saveAll(gameScoreList);
     }
 }

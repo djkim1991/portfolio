@@ -98,7 +98,7 @@ const SnakeGame = (function(){
         if(tmp >= 0 && tmp < mapSize) {
             head[0] = tmp;
         }else {
-            alert('점수 : '+score);
+            // alert('점수 : '+score);
             end();
             initAll();
 
@@ -109,7 +109,7 @@ const SnakeGame = (function(){
         if(tmp >= 0 && tmp < mapSize) {
             head[1] = tmp;
         }else {
-            alert('점수 : '+score);
+            // alert('점수 : '+score);
             end();
             initAll();
 
@@ -118,7 +118,7 @@ const SnakeGame = (function(){
 
         // 몸통을 만난건지 체크
         if($('#block'+head[0]+'_'+head[1]).hasClass('snake')){
-            alert('점수 : '+score);
+            // alert('점수 : '+score);
             end();
             initAll();
 
@@ -193,7 +193,7 @@ const SnakeGame = (function(){
 
         // click Start Btn
         $(document).on('click', '#startBtn', function(){
-            end();
+            // end();
             start();
         });
     }
@@ -214,12 +214,27 @@ const SnakeGame = (function(){
     }
 
     function end() {
+        saveScore();
         clearInterval(gameInterval);
     }
 
     // 난수 생성 함수
     function generateRandom (min, max) {
         return Math.floor(Math.random()*(max-min+1)) + min;
+    }
+
+    // 점수 저장
+    function saveScore() {
+        const nickName = $.trim(prompt("랭킹 등록을 원하시면 닉네임을 입력해 주세요."));
+        if(nickName != undefined && nickName != "") {
+            const url = "/personalProject/miniGame/saveScore";
+            const data = {
+                "score":score,
+                "gameName":"snakeGame",
+                "nickName":nickName
+            };
+            AjaxUtil.submit(url, data, function () {},function () {});
+        }
     }
 
     return {
