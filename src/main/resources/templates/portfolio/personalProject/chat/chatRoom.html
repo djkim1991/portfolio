@@ -21,12 +21,10 @@
 					<div class="list">
 						<ul>
 
-							<li class="link-btn"
+							<li class="roomLi"
 								th:each="chatRoomDto, iter : ${chatRoomDtoList}"
 								th:data-uid="${chatRoomDto.getUid()}"
-								th:data-window-open-url="${'/personalProject/chat'}"
-								th:data-width="${'500'}"
-								th:data-height="${'700'}">
+								th:data-url="${'/personalProject/chat'}">
 								<!-- roomName -->
 								<div>
 									<span th:text="${chatRoomDto.getRoomName()}"></span>

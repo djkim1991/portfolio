@@ -2,10 +2,14 @@ const Chat = (function(){
     let socket;
     let stompClient;
 
-    const myName = "blue";
+    let nickName;
 
     // init 함수
     function init() {
+
+        // set NickName
+        setNickName();
+
         // websocket connect
         connect();
 
@@ -22,6 +26,13 @@ const Chat = (function(){
             }
         });
     }
+    
+    // setNickName
+    function setNickName() {
+        do{
+            nickName = $.trim(prompt("닉네임을 입력해 주세요."));
+        }while (nickName == undefined || nickName == '');
+    }
 
     // websocket connect
     function connect() {
@@ -29,15 +40,15 @@ const Chat = (function(){
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function () {
             stompClient.subscribe("/topic/roomId", function (msg) {
-
-                receiveMessage(JSON.parse(msg.body).body);
+                console.log(msg);
+                receiveMessage(JSON.parse(msg.body));
             });
         });
     }
 
     // send Message
     function sendMessage(text) {
-        stompClient.send("/app/sendMessage", {}, JSON.stringify({'content':text}));
+        stompClient.send("/app/sendMessage", {}, JSON.stringify({'message':text, 'sender':nickName}));
     }
 
     // 메세지 태그 생성
@@ -70,8 +81,8 @@ const Chat = (function(){
 
     // 메세지 수신
     function receiveMessage(data) {
-        // const LR = (data.senderName != myName)? "left" : "right";
-        appendMessageTag("left", data.sender, data.content);
+        const LR = (data.sender != nickName)? "left" : "right";
+        appendMessageTag(LR, data.sender, data.message);
     }
 
     return {

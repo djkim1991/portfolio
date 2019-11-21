@@ -32,7 +32,7 @@ public class PersonalProjectController {
         return "portfolio/personalProject/snakeGame/snakeGame";
     }
 
-    @GetMapping(value = {"/chatRoom"})
+    @GetMapping(value = {"/chat/chatRoom"})
     public String chatRoom(Model model) {
         List<ChatRoomDto> chatRoomDtoList = chatRoomService.list();
 
