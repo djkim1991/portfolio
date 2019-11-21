@@ -1,0 +1,12 @@
+package com.dongju.portfolio.domain.common;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class AjaxResponse {
+    private String result       = "";
+    private String resultMsg    = "";
+    private Object content;
+}

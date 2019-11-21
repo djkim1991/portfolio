@@ -17,45 +17,32 @@
 			</div>
 
 			<div class="panel-1">
-
 				<div class="chat_room_wrap">
 					<div class="list">
 						<ul>
-							<li>
-								<!-- Title -->
-								<div>
-									<span>Title</span>
-								</div>
-								<!-- member count -->
-								<div class="count">
-									<span class="info grey">1/3</span>
-								</div>
-							</li>
 
-							<li>
-								<!-- Title -->
+							<li class="link-btn"
+								th:each="chatRoomDto, iter : ${chatRoomDtoList}"
+								th:data-uid="${chatRoomDto.getUid()}"
+								th:data-window-open-url="${'/personalProject/chat'}"
+								th:data-width="${'500'}"
+								th:data-height="${'700'}">
+								<!-- roomName -->
 								<div>
-									<span>Title</span>
+									<span th:text="${chatRoomDto.getRoomName()}"></span>
 								</div>
 								<!-- member count -->
 								<div class="count">
-									<span class="info grey">1/3</span>
-								</div>
-							</li>
-
-							<li>
-								<!-- Title -->
-								<div>
-									<span>Title</span>
-								</div>
-								<!-- member count -->
-								<div class="count">
-									<span class="info grey">1/3</span>
+									<span class="info grey">
+										<span>0</span>
+										<span>/</span>
+										<span th:text="${chatRoomDto.getMaxMemberCount()}"></span>
+									</span>
 								</div>
 							</li>
 
 							<li class="create-room">
-								<div>CREATE ROOM</div>
+								<div id="createRoomBtn">CREATE ROOM</div>
 							</li>
 						</ul>
 					</div>

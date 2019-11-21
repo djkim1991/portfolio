@@ -1,49 +1,69 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="common/commonHead::commonHead"></head>
+<head>
+	<title>포트폴리오</title>
+</head>
 
-<link rel="stylesheet" th:href="@{/css/portfolio/personalProject/chatRoom.css}"/>
-<script th:src="@{/js/portfolio/personalProject/chatRoom.js}"></script>
+<link rel="stylesheet" th:href="@{/css/portfolio/personalProject/chat/chat.css}"/>
+
+<!--JQuery-->
+<script th:src="@{/js/lib/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/js/lib/sockjs.1.4.0.min.js}"></script>
+<script th:src="@{/js/lib/stomp.1.7.1.min.js}"></script>
+<script th:src="@{/js/portfolio/personalProject/chat/ChatWebSocket.js}"></script>
+<script th:src="@{/js/portfolio/personalProject/chat/chat.js}"></script>
 
 <body>
-	<header>
-		<div class="header-left"><span>Kim Dong Ju</span></div>
-		<div class="header-right"><button class="button-type-1">Contact</button></div>
-	</header>
-	<section>
-		<div>
-			<div class="title">
-				<span>&lt; Snake Game /&gt;</span>
-			</div>
-
-			<div class="panel-1">
-				<div class="snake_wrap">
-
-					<div class='game'>
-						<div class="info">
-							<button id='startBtn'>시작</button>
-							<span class="info grey">점수 : <span id='score'>0</span></span>
-						</div>
-						<div>
-							<table id='snakeTable'>
-							</table>
-						</div>
-					</div>
-
-					<div class='controller'>
-						<table>
-							<tr>
-								<td></td><td id='up_btn' class='btn' data-key='up'>W</td><td></td>
-							</tr>
-							<tr>
-								<td id='left_btn' class='btn' data-key='left'>A</td><td id='down_btn' class='btn' data-key='down'>S</td>
-								<td id='right_btn' class='btn' data-key='right'>D</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
+	<div class="chat_wrap">
+		<div class="header">
+			CHAT
 		</div>
-	</section>
+		<div class="chat">
+			<ul>
+				<li class="left">
+					<div class="sender">
+						<span>red</span>
+					</div>
+					<div class="message">
+						<span>안녕하세요.</span>
+					</div>
+				</li>
+				<li class="right">
+					<div class="sender">
+						<span>blue</span>
+					</div>
+					<div class="message">
+						<span>네 안녕하세요.</span>
+					</div>
+				</li>
+				<li class="left">
+					<div class="sender">
+						<span>red</span>
+					</div>
+					<div class="message">
+						<span>좋은 아침입니다. 좋은 아침입니다. 좋은 아침입니다. 좋은 아침입니다. 좋은 아침입니다. 좋은 아침입니다. 좋은 아침입니다.</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="input-div">
+			<textarea placeholder="Press Enter for send message."></textarea>
+		</div>
+
+		<!-- format -->
+
+		<div class="chat format">
+			<ul>
+				<li>
+					<div class="sender">
+						<span></span>
+					</div>
+					<div class="message">
+						<span></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
