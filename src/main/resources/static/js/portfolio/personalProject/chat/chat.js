@@ -3,6 +3,8 @@ const Chat = (function(){
     let stompClient;
 
     let nickName;
+    const urlArr = location.href.split('/');
+    const roomUid = urlArr[urlArr.length-1];
 
     // init 함수
     function init() {
@@ -39,7 +41,7 @@ const Chat = (function(){
         socket = new SockJS("/ws");
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function () {
-            stompClient.subscribe("/topic/roomId", function (msg) {
+            stompClient.subscribe("/topic/"+roomUid, function (msg) {
                 console.log(msg);
                 receiveMessage(JSON.parse(msg.body));
             });
@@ -48,7 +50,7 @@ const Chat = (function(){
 
     // send Message
     function sendMessage(text) {
-        stompClient.send("/app/sendMessage", {}, JSON.stringify({'message':text, 'sender':nickName}));
+        stompClient.send("/app/sendMessage", {}, JSON.stringify({'roomUid':roomUid, 'message':text, 'sender':nickName}));
     }
 
     // 메세지 태그 생성
