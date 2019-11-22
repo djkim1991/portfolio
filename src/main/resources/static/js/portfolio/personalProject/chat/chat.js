@@ -32,8 +32,12 @@ const Chat = (function(){
     // setNickName
     function setNickName() {
         do{
-            nickName = $.trim(prompt("닉네임을 입력해 주세요."));
-        }while (nickName == undefined || nickName == '');
+            nickName = $.trim(prompt("닉네임을 입력해 주세요.(15자 이내)"));
+
+            if(nickName.length > 15)
+                alert('15자 이내로 입력해 주세요.');
+
+        }while (nickName == undefined || nickName == '' || nickName.length > 15);
     }
 
     // websocket connect
@@ -42,7 +46,6 @@ const Chat = (function(){
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function () {
             stompClient.subscribe("/topic/chat/"+roomUid, function (msg) {
-                console.log(msg);
                 receiveMessage(JSON.parse(msg.body));
             });
         });
@@ -85,6 +88,7 @@ const Chat = (function(){
     function receiveMessage(data) {
         const LR = (data.sender != nickName)? "left" : "right";
         appendMessageTag(LR, data.sender, data.message);
+        document.body.scrollTop = document.body.scrollHeight;
     }
 
     return {

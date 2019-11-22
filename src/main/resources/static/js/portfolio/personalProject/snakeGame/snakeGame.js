@@ -224,14 +224,22 @@ const SnakeGame = (function(){
 
     // 점수 저장
     function saveScore() {
-        const nickName = $.trim(prompt("랭킹 등록을 원하시면 닉네임을 입력해 주세요."));
+        let nickName;
+        do {
+            nickName = $.trim(prompt("랭킹 등록을 원하시면 닉네임을 입력해 주세요.(15자 이내)"));
+
+            if(nickName.length > 15)
+                alert('15자 이내로 입력해 주세요.');
+
+        }while (nickName.length > 15 );
+
         if(nickName != undefined && nickName != "") {
             const url = "/personalProject/miniGame/saveScore";
             const data = {
                 "score":score,
                 "nickName":nickName
             };
-            AjaxUtil.submit(url, data, function () {},function () {});
+            AjaxUtil.submit(url, data, function () {location.reload();},function () {});
         }
     }
 

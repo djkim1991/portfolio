@@ -1,9 +1,9 @@
 
 body { background-color: #EEE; margin: 0; text-align: center; padding-bottom: 20px; }
 
-header { z-index: 99; position: fixed; top:0; width: 100%; background-color: #3C3530; padding: 20px 0; border-bottom:  1px solid #4FAB65; }
+header { text-align: center; z-index: 99; position: fixed; top:0; width: 100%; background-color: #3C3530; padding: 20px 0; border-bottom:  1px solid #4FAB65; }
+header div span { font-size: 30px; color: #FFFFF3; }
 header div.header-left { display: inline-block; width: 49%; text-align: left; }
-header div.header-left span { font-size: 20px; color: #FFFFF3; }
 header div.header-right { display: inline-block; width: 49%; text-align: right; }
 
 section { padding-top: 100px; }

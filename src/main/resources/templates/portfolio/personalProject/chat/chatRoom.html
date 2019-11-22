@@ -6,10 +6,8 @@
 <script th:src="@{/js/portfolio/personalProject/chat/chatRoom.js}"></script>
 
 <body>
-	<header>
-		<div class="header-left"><span>Kim Dong Ju</span></div>
-		<div class="header-right"><button class="button-type-1">Contact</button></div>
-	</header>
+
+	<header th:replace="layout/header::header"></header>
 	<section>
 		<div>
 			<div class="title">
@@ -30,18 +28,18 @@
 									<span th:text="${chatRoomDto.getRoomName()}"></span>
 								</div>
 								<!-- member count -->
-								<div class="count">
+								<!--<div class="count">
 									<span class="info grey">
 										<span>0</span>
 										<span>/</span>
 										<span th:text="${chatRoomDto.getMaxMemberCount()}"></span>
 									</span>
-								</div>
+								</div>-->
 							</li>
 
-							<li class="create-room">
-								<div id="createRoomBtn">CREATE ROOM</div>
-							</li>
+<!--							<li class="create-room">-->
+<!--								<div id="createRoomBtn">CREATE ROOM</div>-->
+<!--							</li>-->
 						</ul>
 					</div>
 				</div>

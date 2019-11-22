@@ -4,13 +4,11 @@
 
 <style type="text/css">
 	section div.panel-1 { height: 250px; }
+	section div.panel-1 button { cursor: auto; }
 </style>
 
 <body>
-	<header>
-		<div class="header-left"><span>Kim Dong Ju</span></div>
-		<div class="header-right"><button class="button-type-1">Contact</button></div>
-	</header>
+	<header th:replace="layout/header::header"></header>
 	<section>
 		<div>
 			<div class="title">
@@ -29,7 +27,7 @@
 
 			<div class="panel-1">
 				<img th:src="@{/images/career/JN.PNG}">
-				<button class="button-type-1" style="cursor: auto;">전남 CMS</button>
+				<button class="button-type-1">전남 CMS</button>
 			</div>
 
 			<div class="panel-1">

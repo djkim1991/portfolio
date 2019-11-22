@@ -6,11 +6,8 @@
 <script th:src="@{/js/portfolio/personalProject/snakeGame/snakeGame.js}"></script>
 
 <body>
-		<header>
-			<div class="header-left"><span>Kim Dong Ju</span></div>
-			<div class="header-right"><button class="button-type-1">Contact</button></div>
-		</header>
-		<section>
+	<header th:replace="layout/header::header"></header>
+	<section>
 		<div>
 			<div class="title">
 				<span>&lt; Snake Game /&gt;</span>
