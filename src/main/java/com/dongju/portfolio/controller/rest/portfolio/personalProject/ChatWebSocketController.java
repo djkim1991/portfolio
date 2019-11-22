@@ -24,6 +24,6 @@ public class ChatWebSocketController {
     public void broadCasting(String message) throws JsonProcessingException {
         Map<String, String> map = new ObjectMapper().readValue(message, HashMap.class);
 
-        simpMessagingTemplate.convertAndSend("/topic/"+map.get("roomUid"), map);
+        simpMessagingTemplate.convertAndSend("/topic/chat/"+map.get("roomUid"), map);
     }
 }

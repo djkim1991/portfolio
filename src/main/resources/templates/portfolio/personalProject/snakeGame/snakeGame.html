@@ -6,11 +6,11 @@
 <script th:src="@{/js/portfolio/personalProject/snakeGame/snakeGame.js}"></script>
 
 <body>
-	<header>
-		<div class="header-left"><span>Kim Dong Ju</span></div>
-		<div class="header-right"><button class="button-type-1">Contact</button></div>
-	</header>
-	<section>
+		<header>
+			<div class="header-left"><span>Kim Dong Ju</span></div>
+			<div class="header-right"><button class="button-type-1">Contact</button></div>
+		</header>
+		<section>
 		<div>
 			<div class="title">
 				<span>&lt; Snake Game /&gt;</span>
@@ -47,9 +47,14 @@
 			<div class="panel-1">
 				<div class="title">Ranking</div>
 				<ul>
-					<li th:each="gameScoreDto, iter:${gameScoreDtoList}">
-						<span th:text="${iter}"></span>
-						<span th:text="${gameScoreDto.getScore()}"></span>
+					<li th:if="${gameScoreDtoList.size() == 0}">
+						<span th:text="${'순위'}" th:style="${'display:inline-block; width:50px;'}"></span>
+						<span th:text="${'점수'}" th:style="${'display:inline-block; width:50px;'}"></span>
+						<span th:text="${'닉네임'}"></span>
+					</li>
+					<li th:each="gameScoreDto, iter : ${gameScoreDtoList}">
+						<span th:text="${iter.index+1+'등'}"></span>
+						<span th:text="${gameScoreDto.getScore()+'점'}"></span>
 						<span th:text="${gameScoreDto.getNickName()}"></span>
 					</li>
 					<li th:if="${gameScoreDtoList.size() == 0}">

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service("JpaGameScoreServiceImpl")
 @Transactional
@@ -25,11 +26,10 @@ public class GameScoreServiceImpl implements GameScoreService {
 
     @Override
     public List<GameScoreDto> list() {
-        List<GameScore> GameScoreList = gameScoreRepository.findAll(Sort.by("uid"));
-
-        List<GameScoreDto> GameScoreDtoList = new ArrayList<>();
-        GameScoreList.forEach( chatRoom ->
-                GameScoreDtoList.add(modelMapper.map(chatRoom, GameScoreDto.class)));
+        List<GameScoreDto> GameScoreDtoList = gameScoreRepository.findTop10ByOrderByScoreDesc()
+                .stream()
+                .map(gameScore -> modelMapper.map(gameScore, GameScoreDto.class))
+                .collect(Collectors.toList());
 
         return GameScoreDtoList;
     }
@@ -59,8 +59,11 @@ public class GameScoreServiceImpl implements GameScoreService {
 
     @Override
     public void deleteOutOfRanking() {
-        List<GameScore> gameScoreList = gameScoreRepository.findTop10ByOrderByScoreDesc();
-        gameScoreRepository.deleteAll();
-        gameScoreRepository.saveAll(gameScoreList);
+        List<Long> gameScoreUidList = gameScoreRepository.findTop10ByOrderByScoreDesc()
+                .stream()
+                .map(gameScore -> gameScore.getUid())
+                .collect(Collectors.toList());
+
+        gameScoreRepository.deleteGameScoresByUidIsNotIn(gameScoreUidList);
     }
 }

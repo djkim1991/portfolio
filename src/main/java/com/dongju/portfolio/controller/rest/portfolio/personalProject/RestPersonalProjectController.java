@@ -49,22 +49,23 @@ public class RestPersonalProjectController {
     }
 
     @PostMapping(value = {"/miniGame/saveScore"})
-    public ResponseEntity saveScore(Integer score, String gameName, String nickName) {
+    public ResponseEntity saveScore(Integer score, String nickName) {
         AjaxResponse ajaxResponse;
 
         GameScoreDto gameScoreDto = GameScoreDto.builder()
                 .score(score)
-                .gameName(gameName)
+                .gameName("snakeGame")
                 .nickName(nickName)
                 .build();
 
+        // 게임 score 저장
         gameScoreService.save(gameScoreDto);
-
+        // 게임 순위 밖 제거
         gameScoreService.deleteOutOfRanking();
 
         ajaxResponse = AjaxResponse.builder()
                 .result("success")
-                .resultMsg("등 입니다.")
+                .resultMsg("")
                 .build();
 
         return ResponseEntity.ok().body(ajaxResponse);

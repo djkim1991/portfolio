@@ -41,7 +41,7 @@ const Chat = (function(){
         socket = new SockJS("/ws");
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function () {
-            stompClient.subscribe("/topic/"+roomUid, function (msg) {
+            stompClient.subscribe("/topic/chat/"+roomUid, function (msg) {
                 console.log(msg);
                 receiveMessage(JSON.parse(msg.body));
             });

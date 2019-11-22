@@ -11,8 +11,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service("jpaChatRoomServiceImpl")
 @Transactional
@@ -25,11 +25,10 @@ public class ChatRoomServiceImpl implements ChatRoomService {
 
     @Override
     public List<ChatRoomDto> list() {
-        List<ChatRoom> chatRoomList = chatRoomRepository.findAll(Sort.by("uid"));
-
-        List<ChatRoomDto> chatRoomDtoList = new ArrayList<>();
-        chatRoomList.forEach( chatRoom ->
-                chatRoomDtoList.add(modelMapper.map(chatRoom, ChatRoomDto.class)));
+        List<ChatRoomDto> chatRoomDtoList = chatRoomRepository.findAll(Sort.by("uid"))
+                .stream()
+                .map(chatRoom -> modelMapper.map(chatRoom, ChatRoomDto.class))
+                .collect(Collectors.toList());
 
         return chatRoomDtoList;
     }
