@@ -55,4 +55,10 @@ public class PersonalProjectController {
 
         return "portfolio/personalProject/chat/chat";
     }
+
+    @GetMapping(value = {"/survey/create"})
+    public String createSurvey(Model model) {
+
+        return "portfolio/personalProject/survey/create";
+    }
 }

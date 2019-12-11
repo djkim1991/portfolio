@@ -1,0 +1,67 @@
+body { text-align: center; background-color: #ede7f6; }
+input[type=button] { outline: none; }
+
+div.survey { background-color: none; width: 800px; padding-bottom: 0px; border-radius: 10px; display: inline-block; }
+
+div.survey > div { background-color: #FFF; margin: 15px; border: 1px solid #DDD; border-radius: 10px; }
+div.survey > div:hover { box-shadow: 2px 2px 4px #AAA; }
+div.survey > div.focus { box-shadow: 2px 2px 4px #AAA; }
+
+div.survey textarea { border: none; margin: 0; outline: none; padding: 0; resize: none; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; z-index: 0; overflow: hidden; color: #202124; letter-spacing: .2px; }
+div.survey > div.focus textarea { border-bottom: 1px solid #BBB; }
+div.survey > div.focus textarea:focus { border-bottom: 2px solid #4285f4; }
+
+/*질문 추가 / 삭제 버튼*/
+div.survey > div > div.buttons { position: absolute; opacity: 0; width: 30px; padding: 0 10px 10px 10px !important; background-color: #FFF; border: 1px solid #DDD; border-radius: 5px; right: -60px; box-shadow: 1px 1px 2px #AAA; }
+div.survey > div.focus > div.buttons { opacity: 1; transition-duration: 0.5s; }
+div.survey > div > div.buttons:hover { box-shadow: 2px 2px 4px #AAA; }
+div.survey > div > div.buttons > div { position: relative; margin-top: 10px; }
+div.survey > div > div.buttons > div span.icono { cursor: pointer; }
+div.survey > div > div.buttons > div span.icono+span { position: absolute; opacity: 0; width: max-content; top: 0; left: 50px; background: #888; color: #FFF; padding: 5px 10px; font-size: 15px; border-radius: 2px; }
+div.survey > div > div.buttons > div span.icono:hover+span { opacity: 1; transition-duration: 0.5s; }
+div.survey > div > div.buttons > div .icono-plusCircle { background: none; width: 24px; height: 24px; color: #888; }
+div.survey > div > div.buttons > div .icono-plusCircle:before { width: 12px; }
+div.survey > div > div.buttons > div .icono-plusCircle:after { height: 12px; }
+div.survey > div > div.buttons > div .icono-crossCircle { background: none; width: 24px; height: 24px; color: #888; }
+div.survey > div > div.buttons > div .icono-crossCircle:before { width: 12px; }
+div.survey > div > div.buttons > div .icono-crossCircle:after { height: 12px; }
+
+/*설문 정보*/
+div.survey > div.survey-info { position: relative; border-top: 10px solid rgb(103, 58, 183); padding: 25px; border-radius: 10px; }
+div.survey > div.survey-info > div { padding: 5px; }
+div.survey > div.survey-info > div textarea.title { display: inline-block; font-family: 'Google Sans',Roboto,Arial,sans-serif; font-size: 32px; line-height: 135%; width: 100%; height: 48px; }
+div.survey > div.survey-info > div textarea.info { font-family: 'Google Sans',Roboto,Arial,sans-serif; font-size: 14px; color: #202124; line-height: 135%; width: 100%; height: 28px; font: 400 16px Roboto,RobotoDraft,Helvetica,Arial,sans-serif; }
+
+/*설문 질문*/
+div.survey > div.survey-item { position: relative; padding: 25px 25px 10px 25px; border-radius: 10px; }
+div.survey > div.survey-item > div { display: inline-block; padding: 5px; }
+
+div.survey > div.survey-item > div.question { width: 500px; float: left; }
+div.survey > div.survey-item > div.question textarea { font-family: 'Google Sans',Roboto,Arial,sans-serif; color: #202124; line-height: 135%; width: 100%; height: 38px; font: 400 18px Roboto,RobotoDraft,Helvetica,Arial,sans-serif; }
+
+div.survey > div.survey-item > div.question-type { width: 190px; float: left; }
+div.survey > div.survey-item > div.question-type select { width: 100%; height: 38px; padding: 0 10px; cursor: pointer; }
+
+div.survey > div.survey-item > div.answers { width: 100%; padding-top: 20px; text-align: left; }
+div.survey > div.survey-item > div.answers input[type=radio] { width: 25px; height: 30px; }
+div.survey > div.survey-item > div.answers input[type=checkbox] { width: 25px; height: 30px; }
+div.survey > div.survey-item > div.answers textarea { font-family: 'Google Sans',Roboto,Arial,sans-serif; color: #202124; line-height: 135%; width: 600px; height: 30px; font: 400 18px Roboto,RobotoDraft,Helvetica,Arial,sans-serif; }
+
+div.survey > div.survey-item > div.answers span:not(.icono) { display: inline-block; font-family: 'Google Sans',Roboto,Arial,sans-serif; color: #888; line-height: 135%; width: 600px; height: 30px; font: 400 18px Roboto,RobotoDraft,Helvetica,Arial,sans-serif; font-size: 15px; border-bottom: 1px dotted #AAA; }
+
+div.survey > div.survey-item > div.answers span.icono { display: none; background: none; width: 24px; height: 24px; color: #888; bottom: 10px; cursor: pointer; }
+div.survey > div.survey-item > div.answers span.icono:before { width: 12px; }
+div.survey > div.survey-item > div.answers span.icono:after { height: 12px; }
+div.survey > div.survey-item > div.bottom { text-align: left; width: 100%; }
+div.survey > div.survey-item > div.bottom input[type=button] { display: none; background-color: #1a73e8; color: #FFF; border: 1px solid #FFF; border-radius: 5px; width: 100px; height: 35px; line-height: 30px; cursor: pointer; }
+div.survey > div.survey-item > div.bottom input[type=button]:hover { background-color: #3C96FA; border: 1px solid #3C96FA; transition-duration: 0.5s; }
+
+div.survey > div.survey-item.focus > div.answers > div span.icono { display: inline-block; }
+div.survey > div.survey-item.focus > div.bottom input[type=button] { display: inline-block; }
+
+/*동적 생성을 위한  format*/
+div.survey.format { display: none; }
+
+div.survey-bottom > div { display: inline-block; text-align: right; width: 800px; }
+div.survey-bottom > div > #save-btn { background-color: #1a73e8; color: #FFF; border: 1px solid #FFF; border-radius: 5px; padding: 5px 20px; line-height: 30px; cursor: pointer; margin-right: 15px; }
+div.survey-bottom > div > #save-btn:hover { background-color: #3C96FA; border: 1px solid #3C96FA; transition-duration: 0.5s; }

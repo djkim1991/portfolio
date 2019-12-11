@@ -1,3 +1,6 @@
+/*
+*   HTTP
+*/
 
 // move to url
 $(document).on('click', 'button, .link-btn', function () {
@@ -49,3 +52,46 @@ const AjaxUtil = (function () {
         "submit": submit
     };
 })();
+
+/*
+*   html Element
+*/
+
+const TextareaElement = (function(){
+    function init() {
+        autoHeight();
+    }
+
+    // height set automatically
+    function autoHeight() {
+        $(document).on('input', 'textarea.auto-height', function(){
+            const basicHeight = $(this).data('basic-height');
+            textarea_auto(this, basicHeight);
+        });
+
+        function textarea_auto(obj, basicHeight) {
+            const textEle = $(obj);
+            textEle[0].style.height = basicHeight;
+            const textEleHeight = textEle.prop('scrollHeight');
+            textEle.css('height', textEleHeight);
+        }
+    }
+
+    // press Enter Key disabled
+    function disabledEnter() {
+        $(document).on('keydown', 'textarea.auto-height', function (e) {
+            if (e.key == "Enter")
+                e.preventDefault();
+        });
+    }
+
+    return {
+        "init"          : init,
+        "autoHeight"    : autoHeight,
+        "disabledEnter" : disabledEnter
+    }
+})();
+
+$(function () {
+    TextareaElement.init();
+});

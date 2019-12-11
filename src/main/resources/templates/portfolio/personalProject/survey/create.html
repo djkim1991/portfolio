@@ -1,0 +1,107 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/commonHead::commonHead"></head>
+
+<link rel="stylesheet" th:href="@{/css/portfolio/personalProject/survey/create.css}"/>
+<script th:src="@{/js/portfolio/personalProject/survey/create.js}"></script>
+
+<body>
+	<div class="survey">
+		<div class="survey-info">
+			<div class="buttons">
+				<div class="add-survey-item">
+					<span class="icono icono-plusCircle"></span>
+					<span>질문 추가</span>
+				</div>
+			</div>
+			<div>
+				<textarea name="title" class="title auto-height" placeholder="설문지 제목" data-basic-height="50" maxlength="150"></textarea>
+			</div>
+			<div>
+				<textarea name="description" class="info auto-height" placeholder="설문지 설명" data-basic-height="30" maxlength="150"></textarea>
+			</div>
+		</div>
+
+
+		<!-- 질문 동적 생성 -->
+
+	</div>
+	<div class="survey-bottom">
+		<div>
+			<input id="save-btn" type="button" value="설문지 생성하기">
+		</div>
+	</div>
+
+	<!-- 동적 생성 포맷 -->
+	<div class="survey format">
+
+		<!-- 질문 포맷 -->
+		<div class="survey-item">
+
+			<div class="buttons">
+				<div class="add-survey-item">
+					<span class="icono icono-plusCircle"></span>
+					<span>질문 추가</span>
+				</div>
+				<div class="remove-survey-item">
+					<span class="icono icono-crossCircle"></span>
+					<span>질문 삭제</span>
+				</div>
+			</div>
+
+			<div class="question">
+				<textarea name="title" class="auto-height" placeholder="질문" data-basic-height="40" maxlength="150"></textarea>
+			</div>
+
+			<div class="question-type">
+				<select name="type">
+					<option value="shortAnswer">단답형</option>
+					<option value="radio">객관식 질문</option>
+					<option value="checkbox">체크박스</option>
+				</select>
+			</div>
+
+			<div class="answers">
+			</div>
+
+			<div class="bottom">
+			</div>
+		</div>
+
+		<!-- 응답 형태 포맷 -->
+
+		<!-- 단답형 -->
+		<div class="answers short-answers" data-answer-type="shortAnswer">
+			<div>
+				<span>단답형 텍스트</span>
+			</div>
+		</div>
+
+		<!-- 라디오 -->
+		<div class="answers radio-answers" data-answer-type="radio">
+			<div>
+				<input type="radio" disabled>
+				<textarea name="answer" class="auto-height" placeholder="옵션" data-basic-height="30" maxlength="150"></textarea>
+				<span class="icono icono-crossCircle"></span>
+			</div>
+		</div>
+
+		<!-- 체크박스 -->
+		<div class="answers checkbox-answers" data-answer-type="checkbox">
+			<div>
+				<input type="checkbox" disabled>
+				<textarea name="answer" class="auto-height" placeholder="옵션" data-basic-height="30" maxlength="150"></textarea>
+				<span class="icono icono-crossCircle"></span>
+			</div>
+		</div>
+
+		<!-- 설문 항목 하단 -->
+		<div class="bottom">
+			<div>
+				<input type="button" value="옵션 추가">
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
