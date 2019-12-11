@@ -185,13 +185,13 @@ const Survey = (function(){
 
             const answerElements = $(this).find('textarea[name=answer]');
             $.each(answerElements, function(){
-                answers.push($(this).val());
+                answerList.push($(this).val());
             });
 
             data.questionList.push({
                 'title'		: title,
                 'type'		: type,
-                'answers'	: answers
+                'answers'	: answerList
             });
         });
 
