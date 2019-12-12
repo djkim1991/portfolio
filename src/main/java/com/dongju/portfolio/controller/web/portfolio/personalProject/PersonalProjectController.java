@@ -56,6 +56,15 @@ public class PersonalProjectController {
         return "portfolio/personalProject/chat/chat";
     }
 
+    @GetMapping(value = {"/survey/surveyList"})
+    public String surveyList(Model model) {
+        List<ChatRoomDto> chatRoomDtoList = chatRoomService.list();
+
+        model.addAttribute("chatRoomDtoList", chatRoomDtoList);
+
+        return "portfolio/personalProject/survey/surveyList";
+    }
+
     @GetMapping(value = {"/survey/create"})
     public String createSurvey(Model model) {
 

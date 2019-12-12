@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/commonHead::commonHead"></head>
+
+<link rel="stylesheet" th:href="@{/css/portfolio/personalProject/survey/surveyList.css}"/>
+<script th:src="@{/js/portfolio/personalProject/survey/surveyList.js}"></script>
+
+<body>
+
+	<header th:replace="layout/header::header"></header>
+	<section>
+		<div>
+			<div class="title">
+				<span>&lt; SURVEY /&gt;</span>
+			</div>
+
+			<div class="panel-1">
+				<div class="chat_room_wrap">
+					<div class="list">
+						<ul>
+
+							<li class="surveyLi"
+								th:each="chatRoomDto, iter : ${chatRoomDtoList}"
+								th:data-uid="${chatRoomDto.getUid()}"
+								th:data-url="${'/personalProject/chat'}">
+								<!-- roomName -->
+								<div>
+									<span th:text="${chatRoomDto.getRoomName()}"></span>
+								</div>
+							</li>
+
+							<li class="create-btn">
+								<div id="createSurveyBtn">CREATE SURVEY</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
