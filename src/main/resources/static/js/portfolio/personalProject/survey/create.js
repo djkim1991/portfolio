@@ -74,7 +74,7 @@ const Survey = (function(){
         let surveyItem = $('.survey.format > .survey-item').clone();
 
         // set type: 단답형/라디오/체크박스
-        setAnswerType(surveyItem, "shortAnswer");
+        setAnswerType(surveyItem, StrDJ.nvl(surveyType, "shortAnswer"));
 
         // focus
         $('.focus').removeClass('focus');
@@ -90,7 +90,7 @@ const Survey = (function(){
         let bottom	= surveyItem.find('.bottom');
 
         // 단답형
-        if(surveyType == "shortAnswer")
+        if(surveyType === "shortAnswer")
         {
             const shortAnswerHtml = $('.survey.format > .answers.short-answers').html();
 
@@ -99,7 +99,7 @@ const Survey = (function(){
         }
 
         // 객관식
-        else if(surveyType == "radio")
+        else if(surveyType === "radio")
         {
             const radioHtml = $('.survey.format > .answers.radio-answers').html();
             const bottomHtml = $('.survey.format > .bottom').html();
@@ -109,7 +109,7 @@ const Survey = (function(){
         }
 
         // 체크박스
-        else if(surveyType == "checkbox")
+        else if(surveyType === "checkbox")
         {
             const checkboxHtml = $('.survey.format > .answers.checkbox-answers').html();
             const bottomHtml = $('.survey.format > .bottom').html();
@@ -128,7 +128,7 @@ const Survey = (function(){
             return;
         }
 
-        const newSurveyItem = createSurveyItem();
+        const newSurveyItem = createSurveyItem("shortAnswer");
 
         surveyItem.after(newSurveyItem);
     }
@@ -141,7 +141,7 @@ const Survey = (function(){
         }
 
         // 객관식
-        if(surveyType == "radio")
+        if(surveyType === "radio")
         {
             const radioHtml = $('.survey.format > .answers.radio-answers').html();
 
@@ -149,7 +149,7 @@ const Survey = (function(){
         }
 
         // 체크박스
-        else if(surveyType == "checkbox")
+        else if(surveyType === "checkbox")
         {
             const checkboxHtml = $('.survey.format > .answers.checkbox-answers').html();
 

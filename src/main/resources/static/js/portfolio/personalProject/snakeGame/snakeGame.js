@@ -1,5 +1,4 @@
-
-////뱀게임///
+// 뱀게임
 const SnakeGame = (function(){
     let score = 0;	// 점수
 
@@ -22,14 +21,14 @@ const SnakeGame = (function(){
             }
 
             tableCode += rowCode + '</tr>';
-            $('#snakeTable').html(tableCode);
+            $("#snakeTable").html(tableCode);
         }
     }
 
     //snake
-    let snake = new Array();
+    let snake = [];
     //food
-    let food = new Array();
+    let food = [];
 
     // init snake
     function initSnake(){
@@ -44,10 +43,11 @@ const SnakeGame = (function(){
         $('#snakeTable td').removeClass('snake');
 
         for(let i=0;i<snake.length;i++) {
-            $('#block'+snake[i][0]+'_'+snake[i][1]).addClass('snake');
+            let snakeBlock = $("#block"+snake[i][0]+'_'+snake[i][1]);
+            snakeBlock.addClass('snake');
 
             // 먹이 먹었을 때
-            if($('#block'+snake[i][0]+'_'+snake[i][1]).hasClass('food')){
+            if(snakeBlock.hasClass('food')){
                 score++; // 점수 증가
 
                 $('#score').text(score); //점수 반영
@@ -81,7 +81,7 @@ const SnakeGame = (function(){
     function drawFood() {
         $('#snakeTable td').removeClass('food');
 
-        for(var i=0;i<food.length;i++) {
+        for(let i=0;i<food.length;i++) {
             $('#block'+food[i][0]+'_'+food[i][1]).addClass('food');
         }
     }
@@ -89,12 +89,12 @@ const SnakeGame = (function(){
 
     // move
     function move() {
-        let head = new Array();
+        let head = [];
         head[0] = snake[0][0];
         head[1] = snake[0][1];
 
         // 벽을 만난건지 체크
-        let tmp = head[0]+1*TB;
+        let tmp = head[0]+TB;
         if(tmp >= 0 && tmp < mapSize) {
             head[0] = tmp;
         }else {
@@ -105,7 +105,7 @@ const SnakeGame = (function(){
             return;
         }
 
-        tmp = head[1]+1*LR;
+        tmp = head[1]+LR;
         if(tmp >= 0 && tmp < mapSize) {
             head[1] = tmp;
         }else {
@@ -128,44 +128,47 @@ const SnakeGame = (function(){
 
         snake.unshift(head);
 
-        if(drawSnake() != 'eat') { //먹은게 아니면
+        if(drawSnake() !== 'eat') { //먹은게 아니면
             snake.pop(); //꼬리 연장 X
         }
     }
 
 
     function left() {
-        if(TB == 0) return; // 반대방향으로 방향전환 불가
+        if(TB === 0) return; // 반대방향으로 방향전환 불가
         LR = -1;
         TB = 0;
     }
     function right() {
-        if(TB == 0) return; // 반대방향으로 방향전환 불가
+        if(TB === 0) return; // 반대방향으로 방향전환 불가
         LR = 1;
         TB = 0;
     }
     function up() {
-        if(LR == 0) return; // 반대방향으로 방향전환 불가
+        if(LR === 0) return; // 반대방향으로 방향전환 불가
         LR = 0;
         TB = -1;
     }
     function down() {
-        if(LR == 0) return; // 반대방향으로 방향전환 불가
+        if(LR === 0) return; // 반대방향으로 방향전환 불가
         LR = 0;
         TB = 1;
     }
 
     $(document).on('click', '.btn', function(){
-        var key = $(this).attr('data-key');
-        if(key == 'up') {
+        let key = $(this).attr('data-key');
+
+        if(key === "up")
             up();
-        }else if(key == 'down') {
+
+        else if(key === "down")
             down();
-        }else if(key == 'left') {
+
+        else if(key === "left")
             left();
-        }else if(key == 'right') {
+
+        else if(key === "right")
             right();
-        }
     });
 
     function initEvent() {
@@ -176,16 +179,16 @@ const SnakeGame = (function(){
 
         // KEY DOWN
         $(document).on('keydown', 'body', function(event){
-            if(event.key == 'w' || event.key == 'W') {
+            if(event.key === 'w' || event.key === 'W') {
                 $('#up_btn').addClass('on');
                 up();
-            }else if(event.key == 's' || event.key == 'S') {
+            }else if(event.key === 's' || event.key === 'S') {
                 $('#down_btn').addClass('on');
                 down();
-            }else if(event.key == 'a' || event.key == 'A') {
+            }else if(event.key === 'a' || event.key === 'A') {
                 $('#left_btn').addClass('on');
                 left();
-            }else if(event.key == 'd' || event.key == 'D') {
+            }else if(event.key === 'd' || event.key === 'D') {
                 $('#right_btn').addClass('on');
                 right();
             }
@@ -197,7 +200,6 @@ const SnakeGame = (function(){
             start();
         });
     }
-
 
     function initAll() {
         score = 0;		// 점수 초기화
@@ -233,13 +235,13 @@ const SnakeGame = (function(){
 
         }while (nickName.length > 15 );
 
-        if(nickName != undefined && nickName != "") {
+        if(typeof nickName !== "undefined" && nickName !== "") {
             const url = "/personalProject/miniGame/saveScore";
             const data = {
                 "score":score,
                 "nickName":nickName
             };
-            AjaxUtil.submit(url, data, function () {location.reload();},function () {});
+            AjaxDJ.submit(url, data, function () {location.reload();},function () {});
         }
     }
 

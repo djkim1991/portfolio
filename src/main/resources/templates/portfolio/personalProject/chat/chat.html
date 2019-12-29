@@ -1,16 +1,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-	<title>포트폴리오</title>
-</head>
+<head th:replace="common/commonHead::commonHead"></head>
 
 <link rel="stylesheet" th:href="@{/css/portfolio/personalProject/chat/chat.css}"/>
 
-<!--JQuery-->
-<script th:src="@{/js/lib/jquery-3.4.1.min.js}"></script>
 <script th:src="@{/js/lib/sockjs.1.4.0.min.js}"></script>
 <script th:src="@{/js/lib/stomp.1.7.1.min.js}"></script>
-<script th:src="@{/js/portfolio/personalProject/chat/ChatWebSocket.js}"></script>
 <script th:src="@{/js/portfolio/personalProject/chat/chat.js}"></script>
 
 <body>

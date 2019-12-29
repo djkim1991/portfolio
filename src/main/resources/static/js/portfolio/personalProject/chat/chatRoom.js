@@ -15,7 +15,7 @@ const ChatRoom = (function () {
     // Create Room
     function createChatRoom() {
         const roomName = $.trim(prompt("방 제목을 입력해 주세요.", ""));
-        if(roomName != undefined && roomName != "") {
+        if(!StrDJ.isEmpty(roomName)) {
             const url = "/personalProject/chat/createChatRoom";
             const data = {
                 roomName:roomName
@@ -25,14 +25,14 @@ const ChatRoom = (function () {
             }
             function errorFunction() {}
 
-            AjaxUtil.submit(url, data, successFunction, errorFunction);
+            AjaxDJ.submit(url, data, successFunction, errorFunction);
         }
     }
     
     // Enter Room
     function enterRoom(url, uid, target) {
 
-        if(url != undefined && url != '') {
+        if(!StrDJ.isEmpty(url)) {
             let width = 450;
             let height = 700;
 
