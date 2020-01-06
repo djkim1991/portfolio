@@ -9,11 +9,14 @@ const AjaxDJ = (function () {
      * @param   errorFunction   function    : Ajax 호출 실패시 callback 함수
      * */
     function submit(url, data, successFunction, errorFunction) {
-        $('.loading-css').show();
+
         $.ajax({
             url:url,
             type:'post',
             data:data,
+            beforeSend : function() {
+                $('div.loading-css').show();
+            },
             success: function(data) {
                 const msg = data.resultMsg;
 
@@ -21,7 +24,6 @@ const AjaxDJ = (function () {
                     alert(msg);
 
                 successFunction();
-                $('.loading-css').hide();
             },
             error: function(data) {
                 const msg = data.resultMsg;
@@ -29,7 +31,9 @@ const AjaxDJ = (function () {
                     alert(msg);
 
                 errorFunction();
-                $('.loading-css').hide();
+            },
+            complete: function () {
+                $('div.loading-css').hide();
             }
         });
     }

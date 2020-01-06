@@ -3,15 +3,20 @@ package com.dongju.portfolio.controller.rest.portfolio.personalProject;
 import com.dongju.portfolio.domain.common.AjaxResponse;
 import com.dongju.portfolio.domain.dto.portfolio.personalProject.chat.ChatRoomDto;
 import com.dongju.portfolio.domain.dto.portfolio.personalProject.miniGame.GameScoreDto;
+import com.dongju.portfolio.domain.dto.portfolio.personalProject.survey.SurveyDto;
+import com.dongju.portfolio.domain.dto.portfolio.personalProject.survey.SurveyQuestionDto;
 import com.dongju.portfolio.service.portfolio.personalProject.chat.ChatRoomService;
 import com.dongju.portfolio.service.portfolio.personalProject.miniGame.GameScoreService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -44,6 +49,18 @@ public class RestPersonalProjectController {
                     .resultMsg("성공적으로 방을 생성했습니다.")
                     .build();
         }
+
+        return ResponseEntity.ok().body(ajaxResponse);
+    }
+
+    @PostMapping(value = {"/survey/create"})
+    public ResponseEntity createSurvey(@RequestParam String surveyJson, @RequestParam String surveyQuestionListJson) {
+        AjaxResponse ajaxResponse;
+
+        ajaxResponse = AjaxResponse.builder()
+                .result("success")
+                .resultMsg("성공적으로 설문을 생성했습니다.")
+                .build();
 
         return ResponseEntity.ok().body(ajaxResponse);
     }

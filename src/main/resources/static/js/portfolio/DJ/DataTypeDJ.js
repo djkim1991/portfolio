@@ -45,7 +45,6 @@ const DataTypeDJ = (function () {
         return regex.test(str);
     }
 
-
     return {
         "isNumber"      : isNumber,     // 숫자 확인(소숫점 포함)
         "isInteger"     : isInteger,    // Integer 확인

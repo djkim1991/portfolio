@@ -24,3 +24,10 @@ span.info { border: 1px solid #888; padding: 3px 10px; border-radius: 3px; color
 span.info.red { background-color: #F83622; border: 1px solid #D40200; color: #FFF; }
 span.info.blue { background-color: #4B9BFF; border: 1px solid #0757DD; color: #FFF; }
 span.info.grey { background-color: #EEE; }
+
+/*loading css*/
+/*ex) <div class="loading-css"><div></div></div> */
+div.loading-css { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #00000044; }
+div.loading-css > div{ position: absolute; display: inline-block; top: 50%; margin-top: -70px; }
+div.loading-css > div:after { content: " "; display: block; width: 70px; height: 70px; border-radius: 50%; border: 6px solid #333; border-color: #333 transparent #333 transparent; animation: loading-css 1.2s linear infinite; }
+@keyframes loading-css { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

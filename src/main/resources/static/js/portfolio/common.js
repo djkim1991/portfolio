@@ -31,7 +31,8 @@ $(document).on('click', 'button, .link-btn', function () {
 
 const TextareaElement = (function(){
     function init() {
-        autoHeight();
+        autoHeight();           // height set automatically
+        appendLoadingCss();     // append ".loading-css" div to body
     }
 
     // height set automatically
@@ -56,11 +57,24 @@ const TextareaElement = (function(){
                 e.preventDefault();
         });
     }
+    
+    // append ".loading-css" div to body
+    function appendLoadingCss() {
+        if(!$("body").hasClass("loading-css"))
+            return;
+
+        $(document.createElement("div"))
+            .addClass("loading-css")
+            .hide()
+            .append(document.createElement("div"))
+            .appendTo("body");
+    }
 
     return {
-        "init"          : init,
-        "autoHeight"    : autoHeight,
-        "disabledEnter" : disabledEnter
+        "init"              : init,
+        "autoHeight"        : autoHeight,
+        "disabledEnter"     : disabledEnter,
+        "appendLoadingCss"  : appendLoadingCss
     }
 })();
 

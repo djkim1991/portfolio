@@ -159,13 +159,16 @@ const Survey = (function(){
 
     // 설문 등록
     function writeSurvey(){
-        const data = getSurveyData();
+        const data = {
+            surveyJson              : getSurveyJson(),
+            surveyQuestionListJson  : getSurveyQuestionListJson()
+        };
 
-        console.log(JSON.stringify(data));
+        AjaxDJ.submit("/personalProject/survey/create", data, function(){}, function(){});
     }
 
     // 설문 정보 추출
-    function getSurveyData() {
+    function getSurveyJson() {
         let data = {};
 
         // 설문 정보
@@ -174,6 +177,13 @@ const Survey = (function(){
             'title'			: surveyInfo.find('textarea[name=title]').val(),
             'description'	: surveyInfo.find('textarea[name=description]').val()
         };
+
+        return JSON.stringify(data);
+    }
+
+    // 설문 질문 정보 추출
+    function getSurveyQuestionListJson() {
+        let data = {};
 
         // 질문 정보
         const surveyQuestionList = $('.survey-item');
@@ -195,8 +205,7 @@ const Survey = (function(){
             });
         });
 
-
-        return data;
+        return JSON.stringify(data);
     }
 
     return {
