@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <link rel="stylesheet" th:href="@{/css/lib/slick.css}"/>
+    <style>
+        div.slider * { outline: none; }
+        div.main-wrapper { height: 90%; padding-bottom: 80px; }
+        div.contents-belt { width: 3000px; height: 16%; overflow: hidden; }
+
+        div.slider { height: 100%; width: 100%; }
+        div.slick-list { height: 100%; }
+        div.slick-track { height: 100%; }
+        div.slider-item { height: 100%; padding-bottom: 2rem; box-sizing: border-box; text-align: center; }
+        div.slider-item span { display: inline-block; padding: 1rem 2rem; border-radius: 100px; }
+
+        div.contents-belt.belt-1 div.slider-item span { font-size: 1.8rem; border: 1px solid crimson; color: crimson; }
+        div.contents-belt.belt-2 div.slider-item span { font-size: 1.8rem; border: 1px solid #1cc88a; color: #1cc88a; }
+        div.contents-belt.belt-3 div.slider-item span { font-size: 1.8rem; border: 1px solid orangered; color: orangered; }
+        div.contents-belt.belt-4 div.slider-item span { font-size: 1.8rem; border: 1px solid #4e73df; color: #4e73df; }
+        div.contents-belt.belt-5 div.slider-item span { font-size: 1.8rem; border: 1px solid orange; color: orange; }
+        div.contents-belt.belt-6 div.slider-item span { font-size: 1.8rem; border: 1px solid burlywood; color: burlywood; }
+    </style>
+    <script>
+      $(function () {
+        const slickBasicOptions = {
+          cssEase: 'linear',
+          slidesToShow: 9,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 0,
+          arrows: false,
+          dots: false,
+          infinite: true,
+          draggable: false,
+          pauseOnFocus: false,
+          pauseOnHover: false,
+        };
+
+        $('.slider.slider-1').slick({ ...slickBasicOptions, speed: 3000 });
+        $('.slider.slider-2').slick({ ...slickBasicOptions, speed: 3600 });
+        $('.slider.slider-3').slick({ ...slickBasicOptions, speed: 2400 });
+        $('.slider.slider-4').slick({ ...slickBasicOptions, speed: 3200 });
+        $('.slider.slider-5').slick({ ...slickBasicOptions, speed: 3800 });
+        $('.slider.slider-6').slick({ ...slickBasicOptions, speed: 2200 });
+      });
+    </script>
+</head>
+
+<div layout:fragment="content" class="main-wrapper">
+    <div class="contents-belt belt-1">
+        <div class="slider slider-1">
+            <div class="slider-item">
+                <span>파이썬</span>
+            </div>
+            <div class="slider-item">
+                <span>C#</span>
+            </div>
+            <div class="slider-item">
+                <span>자바</span>
+            </div>
+            <div class="slider-item">
+                <span>자바스크립트</span>
+            </div>
+            <div class="slider-item">
+                <span>PHP</span>
+            </div>
+            <div class="slider-item">
+                <span>파이썬</span>
+            </div>
+            <div class="slider-item">
+                <span>C#</span>
+            </div>
+            <div class="slider-item">
+                <span>자바</span>
+            </div>
+            <div class="slider-item">
+                <span>자바스크립트</span>
+            </div>
+            <div class="slider-item">
+                <span>PHP</span>
+            </div>
+        </div>
+    </div>
+    <div class="contents-belt belt-2">
+        <div class="slider slider-2">
+            <div class="slider-item">
+                <span>Springboot</span>
+            </div>
+            <div class="slider-item">
+                <span>JPA</span>
+            </div>
+            <div class="slider-item">
+                <span>MSA</span>
+            </div>
+            <div class="slider-item">
+                <span>QueryDsl</span>
+            </div>
+            <div class="slider-item">
+                <span>MVC</span>
+            </div>
+            <div class="slider-item">
+                <span>RabbitMQ</span>
+            </div>
+            <div class="slider-item">
+                <span>Redis</span>
+            </div>
+            <div class="slider-item">
+                <span>Arcus</span>
+            </div>
+            <div class="slider-item">
+                <span>Docker</span>
+            </div>
+            <div class="slider-item">
+                <span>Kubernetes</span>
+            </div>
+        </div>
+    </div>
+    <div class="contents-belt belt-3">
+        <div class="slider slider-3">
+            <div class="slider-item">
+                <span>thymeleaf</span>
+            </div>
+            <div class="slider-item">
+                <span>jQuery</span>
+            </div>
+            <div class="slider-item">
+                <span>node.js</span>
+            </div>
+            <div class="slider-item">
+                <span>React.js</span>
+            </div>
+            <div class="slider-item">
+                <span>Webpack</span>
+            </div>
+            <div class="slider-item">
+                <span>babel</span>
+            </div>
+            <div class="slider-item">
+                <span>HTML</span>
+            </div>
+            <div class="slider-item">
+                <span>Typescript</span>
+            </div>
+            <div class="slider-item">
+                <span>ES6</span>
+            </div>
+            <div class="slider-item">
+                <span>jQuery</span>
+            </div>
+        </div>
+    </div>
+    <div class="contents-belt belt-4">
+        <div class="slider slider-2">
+            <div class="slider-item">
+                <span>개발자</span>
+            </div>
+            <div class="slider-item">
+                <span>풀스택</span>
+            </div>
+            <div class="slider-item">
+                <span>데브옵스</span>
+            </div>
+            <div class="slider-item">
+                <span>5년차</span>
+            </div>
+            <div class="slider-item">
+                <span>개발자</span>
+            </div>
+            <div class="slider-item">
+                <span>풀스택</span>
+            </div>
+            <div class="slider-item">
+                <span>데브옵스</span>
+            </div>
+            <div class="slider-item">
+                <span>5년차</span>
+            </div>
+            <div class="slider-item">
+                <span>개발자</span>
+            </div>
+            <div class="slider-item">
+                <span>풀스택</span>
+            </div>
+            <div class="slider-item">
+                <span>데브옵스</span>
+            </div>
+            <div class="slider-item">
+                <span>5년차</span>
+            </div>
+        </div>
+    </div>
+    <div class="contents-belt belt-5">
+        <div class="slider slider-3">
+            <div class="slider-item">
+                <span>ENFP</span>
+            </div>
+            <div class="slider-item">
+                <span>덕업일치</span>
+            </div>
+            <div class="slider-item">
+                <span>인터넷 바둑 2단</span>
+            </div>
+            <div class="slider-item">
+                <span>긍정적</span>
+            </div>
+            <div class="slider-item">
+                <span>아마추어 펜싱 은메달</span>
+            </div>
+            <div class="slider-item">
+                <span>성실함</span>
+            </div>
+            <div class="slider-item">
+                <span>ENFP</span>
+            </div>
+            <div class="slider-item">
+                <span>덕업일치</span>
+            </div>
+            <div class="slider-item">
+                <span>인터넷 바둑 2단</span>
+            </div>
+            <div class="slider-item">
+                <span>긍정적</span>
+            </div>
+            <div class="slider-item">
+                <span>아마추어 펜싱 은메달</span>
+            </div>
+            <div class="slider-item">
+                <span>성실함</span>
+            </div>
+        </div>
+    </div>
+    <div class="contents-belt belt-6">
+        <div class="slider slider-1">
+            <div class="slider-item">
+                <span>Deep learning</span>
+            </div>
+            <div class="slider-item">
+                <span>PyTorch</span>
+            </div>
+            <div class="slider-item">
+                <span>Tensorflow</span>
+            </div>
+            <div class="slider-item">
+                <span>GAN</span>
+            </div>
+            <div class="slider-item">
+                <span>Star-GAN</span>
+            </div>
+            <div class="slider-item">
+                <span>Neural Network</span>
+            </div>
+            <div class="slider-item">
+                <span>AI</span>
+            </div>
+            <div class="slider-item">
+                <span>Machine learning</span>
+            </div>
+            <div class="slider-item">
+                <span>Tensorflow</span>
+            </div>
+            <div class="slider-item">
+                <span>GAN</span>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

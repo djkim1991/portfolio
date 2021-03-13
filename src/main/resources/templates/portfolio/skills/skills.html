@@ -1,134 +1,139 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout/layout}">
+<head>
+	<style>
+		.card-body img { border: 1px solid #EEE; width: 100%; }
+	</style>
+</head>
 
-<head th:replace="common/commonHead::commonHead"></head>
+<div layout:fragment="content" class="container-fluid">
+	<div class="container-fluid">
 
-<style>
-	section div.panel-1 { height: 300px; }
-	.button-type-1 { cursor: auto; }
-</style>
+		<h3>DEV SKILL</h3>
+		<hr />
 
-<body>
-	<header th:replace="layout/header::header"></header>
-	<section>
-		<div>
-			<div class="title">
-				<span>&lt; Framework /&gt;</span>
+		<!-- Content Row -->
+		<div class="row">
+
+			<div class="col-lg-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">Framework</h6>
+					</div>
+					<div class="card-body">
+						<h4 class="small font-weight-bold">Spring <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<h4 class="small font-weight-bold">Springboot <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<div class="panel-1">
-				<img th:src="@{/images/skills/SpringBoot.png}">
-				<button class="button-type-1">Spring Boot</button>
+			<div class="col-lg-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">Programming Language</h6>
+					</div>
+					<div class="card-body">
+						<h4 class="small font-weight-bold">JAVA 8+ <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<h4 class="small font-weight-bold">javascript ES6+ <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<div class="panel-1">
-				<img th:src="@{/images/skills/spring.jpg}">
-				<button class="button-type-1">Spring</button>
+			<div class="col-lg-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">Database</h6>
+					</div>
+					<div class="card-body">
+						<h4 class="small font-weight-bold">MySQL <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<h4 class="small font-weight-bold">Redis <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<div class="panel-1">
-				<img th:src="@{/images/skills/jpa.png}">
-				<button class="button-type-1">HIBERNATE ORM</button>
+			<div class="col-lg-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">Cloud Service</h6>
+					</div>
+					<div class="card-body">
+						<h4 class="small font-weight-bold">AWS <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<h4 class="small font-weight-bold">HEROKU <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+				</div>
 			</div>
+
+			<div class="col-lg-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">Server Skills</h6>
+					</div>
+					<div class="card-body">
+						<h4 class="small font-weight-bold">RabbitMQ <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<h4 class="small font-weight-bold">JPA <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<h4 class="small font-weight-bold">Mybatis <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">Front Skills</h6>
+					</div>
+					<div class="card-body">
+						<h4 class="small font-weight-bold">React.js <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<h4 class="small font-weight-bold">thymeleaf / jsp <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<h4 class="small font-weight-bold">HTML / JS / CSS <span class="float-right">100%</span></h4>
+						<div class="progress mb-4">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
-
-		<div>
-			<div class="title">
-				<span>&lt; Programming Language /&gt;</span>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/java.jpg}">
-				<button class="button-type-1">JAVA</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/python.jpg}">
-				<button class="button-type-1">PYTHON</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/php.jpeg}">
-				<button class="button-type-1">PHP</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/javascript.jpeg}">
-				<button class="button-type-1">JAVASCRIPT</button>
-			</div>
-		</div>
-
-		<div>
-			<div class="title">
-				<span>&lt; DataBase /&gt;</span>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/mysql.png}">
-				<button class="button-type-1">MYSQL</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/postgres.png}">
-				<button class="button-type-1">POSTGRES</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/mssql.jpg}">
-				<button class="button-type-1">MSSQL</button>
-			</div>
-		</div>
-
-		<div>
-			<div class="title">
-				<span>&lt; Web /&gt;</span>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/http.jpg}">
-				<button class="button-type-1">HTTP</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/tomcat.png}">
-				<button class="button-type-1">DEPLOY</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/aws.png}">
-				<button class="button-type-1">AWS</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/heroku.png}">
-				<button class="button-type-1">HEROKU</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/html_css.png}">
-				<button class="button-type-1">HTML / CSS</button>
-			</div>
-		</div>
-
-		<div>
-			<div class="title">
-				<span>&lt; AI /&gt;</span>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/deeplearning.jpeg}">
-				<button class="button-type-1">DEEP LEARNING</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/tensorflow.png}">
-				<button class="button-type-1">TENSOR FLOW</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/skills/pyTorch.jpg}">
-				<button class="button-type-1">PYTORCH</button>
-			</div>
-		</div>
-	</section>
-</body>
+	</div>
+</div>
 </html>

@@ -1,56 +1,145 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout/layout}">
+<head>
+	<style>
+		.card-body img { border: 1px solid #EEE; width: 100%; }
+	</style>
+</head>
 
-<head th:replace="common/commonHead::commonHead"></head>
+<div layout:fragment="content" class="container-fluid">
+	<div class="container-fluid">
 
-<style type="text/css">
-	section div.panel-1 { height: 250px; }
-	section div.panel-1 button { cursor: auto; }
-</style>
+		<h3>2020 - NOW</h3>
+		<hr />
 
-<body>
-	<header th:replace="layout/header::header"></header>
-	<section>
-		<div>
-			<div class="title">
-				<span>&lt; Projects /&gt;</span>
+		<!-- Content Row -->
+		<div class="row">
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">카카오톡 선물하기 프로모션</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/kaakocommerce_gift.png}" alt="" />
+						<hr />
+						<span>dktechin</span>
+					</div>
+				</div>
 			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/career/ktedu.PNG}">
-				<button class="button-type-1">KT그룹교육포털</button>
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">kakao for business 지원센터</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/kakao_for_business_black.png}" alt="" />
+						<hr />
+						<span>dktechin</span>
+					</div>
+				</div>
 			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/career/refund.PNG}">
-				<button class="button-type-1">에너지 관리공단 환급사업</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/career/JN.PNG}">
-				<button class="button-type-1">전남 CMS</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/career/anyfood.PNG}">
-				<button class="button-type-1">애니푸드</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/career/thelounge.PNG}">
-				<button class="button-type-1">더라운지 멤버스</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/career/sibf.jpg}">
-				<button class="button-type-1">서울국제도서전</button>
-			</div>
-
-			<div class="panel-1">
-				<img th:src="@{/images/career/gg.PNG}">
-				<button class="button-type-1">공감</button>
-			</div>
-
 		</div>
-	</section>
-</body>
+
+		<h3>2018 - 2019</h3>
+		<hr />
+
+		<!-- Content Row -->
+		<div class="row">
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">KT그룹 교육포털</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/ktedu.PNG}" alt="" />
+						<hr />
+						<span>애니모비</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">에너지 관리공단 환급사업</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/refund.PNG}" alt="" />
+						<hr />
+						<span>애니모비</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">전남 CMS</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/cms.png}" alt="" />
+						<hr />
+						<span>애니모비</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">애니푸드</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/anyfood.PNG}" alt="" />
+						<hr />
+						<span>애니모비</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">더라운지 멤버스</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/thelounge.PNG}" alt="" />
+						<hr />
+						<span>애니모비</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">서울 국제 도서전</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/sibf.jpg}" alt="" />
+						<hr />
+						<span>애니모비</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h3>2017</h3>
+		<hr />
+
+		<!-- Content Row -->
+		<div class="row">
+			<div class="col-xl-4 col-md-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">공감</h6>
+					</div>
+					<div class="card-body">
+						<img th:src="@{/images/career/gg.PNG}" alt="" />
+						<hr />
+						<span>새얀아이엔씨</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
 </html>

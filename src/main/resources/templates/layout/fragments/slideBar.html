@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<ul th:fragment="slideBar" class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
+        <div class="sidebar-brand-text" style="font-size: 1.5rem;">KIM DONG JU</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item home">
+        <a class="nav-link" href="/home">
+            <i class="fas fa-fw fa-home"></i>
+            <span>HOME</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item profile">
+        <a class="nav-link" href="/profile">
+            <i class="fas fa-fw fa-id-card"></i>
+            <span>PROFILE</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item skills">
+        <a class="nav-link" href="/skills">
+            <i class="fas fa-fw fa-book"></i>
+            <span>SKILLS</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item career">
+        <a class="nav-link" href="/career">
+            <i class="fas fa-fw fa-chart-line"></i>
+            <span>CAREER</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item personalProject">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+           aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-comments"></i>
+            <span>PERSONAL PROJECT</span>
+        </a>
+        <div id="collapseUtilities" class="collapse personalProject" aria-labelledby="headingUtilities"
+             data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">WEB SOCKET</h6>
+                <a class="collapse-item chat" href="/personalProject/chat/chatRoom">
+                    <i class="fas fa-fw fa-comments"></i>
+                    <span class="mx-1">CHAT</span>
+                </a>
+                <div class="collapse-divider"></div>
+                <h6 class="collapse-header">MINI GAME</h6>
+                <a class="collapse-item snakeGame" href="/personalProject/snakeGame">
+                    <i class="fas fa-fw fa-gamepad"></i>
+                    <span class="mx-1">SNAKE GAME</span>
+                </a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="https://dororongju.tistory.com/">
+            <i class="fas fa-fw fa-window-restore"></i>
+            <span>BLOG</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+</ul>
+
+</html>
+
+

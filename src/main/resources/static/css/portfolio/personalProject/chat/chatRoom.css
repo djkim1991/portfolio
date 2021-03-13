@@ -1,8 +1,8 @@
 .chat_room_wrap * { margin: 0; padding: 0; }
 .chat_room_wrap .list {  }
 .chat_room_wrap .list ul { width: 100%; list-style: none; }
-.chat_room_wrap .list ul li { padding: 20px; background-color: #FFF; border-bottom: 1px solid #e5e5e5; cursor: pointer; }
-.chat_room_wrap .list ul li:hover { background-color: #EEE; transition-duration: 0.7s; }
+.chat_room_wrap .list ul li { margin: 5px 0; padding: 20px; background-color: #FFF; border: 1px solid #DDD; cursor: pointer; }
+.chat_room_wrap .list ul li:hover { background-color: #4e73df10; transition-duration: 0.7s; }
 .chat_room_wrap .list ul li.create-room { text-align: center; border: none; cursor: auto; }
 .chat_room_wrap .list ul li.create-room:hover { background-color: #FFF; }
 .chat_room_wrap .list ul li.create-room > div { border: 1px solid #888; padding: 10px 20px; border-radius: 3px; color: #888; font-size: 15px; cursor: pointer; }

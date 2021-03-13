@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Kim Dong Ju</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="/sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="/sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
+
+        <!-- lib-->
+        <script th:src="@{/js/lib/jquery-3.4.1.min.js}"></script>
+        <script th:src="@{/js/lib/slick-1.8.1.min.js}"></script>
+        <!-- common-->
+        <script th:src="@{/js/portfolio/common.js}"></script>
+        <script th:src="@{/js/portfolio/DJ/StrDJ.js}"></script>
+        <script th:src="@{/js/portfolio/DJ/AjaxDJ.js}"></script>
+    </head>
+
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <ul th:replace="layout/fragments/slideBar :: slideBar"></ul>
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- TopBar -->
+                    <nav th:replace="layout/fragments/topBar :: topBar"></nav>
+
+                    <!-- Begin Page Content -->
+                    <div layout:fragment="content"></div>
+
+                </div>
+
+                <!-- Footer -->
+                <footer th:replace="layout/fragments/footer :: footer" ></footer>
+            </div>
+        </div>
+
+
+        <!-- Scroll to Top Button-->
+        <a th:replace="layout/fragments/scrollToTop :: scrollToTop"></a>
+
+        <!-- Logout Modal-->
+        <div th:replace="layout/fragments/logoutModal :: logoutModal"></div>
+    </body>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/sb-admin-2/vendor/jquery/jquery.min.js"></script>
+    <script src="/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/sb-admin-2/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/sb-admin-2/js/sb-admin-2.min.js"></script>
+</html>

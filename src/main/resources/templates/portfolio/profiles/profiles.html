@@ -1,84 +1,83 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout/layout}">
+<head>
+	<style>
+		div.profile table {  }
+		div.profile table tr th { text-align: center; }
+		div.profile table tr td { padding-left: 20px; }
 
-<head th:replace="common/commonHead::commonHead"></head>
+		div.profile table.info { border-collapse: collapse; text-align: center; margin: 0 0 20px 0; width: 100%; }
+		div.profile table.info tr th, div.profile table.info tr td { border: 1px solid #EAEAEA; padding: 10px; min-width: 80px; }
+		div.profile table.info tr th { background-color: #4e73df; color: #FFF; font-weight: normal; }
+		div.profile table.info tr td { background-color: #FFFFFF; }
 
-<style type="text/css">
-	span.icono-mail, span.icono-display { color: #333; }
+		img.profile-img { position: inherit; top: auto; left: auto; width: 100px; height: auto; border: 1px solid #AAA; }
 
-	section div.panel-1 { width: 100%; height: auto; }
+		span.title { display: inline-block; color: #555; margin-bottom: 5px; font-size: 1.2rem; }
+	</style>
+</head>
 
-	div.panel-1 table { margin: 20px; }
-	div.panel-1 table tr th { text-align: center; }
-	div.panel-1 table tr td { padding-left: 10px; }
+<div layout:fragment="content" class="container-fluid">
+	<div class="container-fluid">
 
-	div.panel-1 table.info { border-collapse: collapse; width: 900px; text-align: center; font-size: 13px; margin: 25px; }
-	div.panel-1 table.info tr th, div.panel-1 table.info tr td { border: 1px solid #EAEAEA; padding: 10px; }
-	div.panel-1 table.info tr th { background-color: #3C3530; color: #FFF; }
-	div.panel-1 table.info tr td { background-color: #FFFFFF; }
+		<h3>PROFILE</h3>
+		<hr />
 
-	section div.panel-1 img.profile-img { position: inherit; top: auto; left: auto; width: 100px; height: 140px; border: 1px solid #333; background-color: #333; border-radius: 5px; }
-
-	span.title { display: inline-block; margin: 10px 0 0 20px; font-size: 18px; font-weight: bold; padding-bottom: 10px; border-bottom: 2px solid #333;}
-</style>
-
-<body>
-	<header th:replace="layout/header::header"></header>
-	<section>
-		<div>
-			<div class="title">
-				<span>&lt; Resume /&gt;</span>
-			</div>
-
-			<div class="panel-1">
+		<!-- Content Row -->
+		<div class="row">
+			<div class="profile col-lg-8 mb-4" style="color: #555;">
 				<table>
 					<tr>
-						<td rowspan="4">
-							<img class="profile-img" src="https://www.saramin.co.kr/zf_user/persons/picture?idx=8687659|2787c7e9dbc6d04911032750aa68cf92aafc5ed5df986f5dc9d43484b83e13d7">
+						<td rowspan="4" style="padding-left: 0px; ">
+							<img class="profile-img shadow" th:src="@{/images/profile/profile_2.jpeg}" alt="" />
 						</td>
 						<td>
 							<b>김동주</b>&nbsp;|
-							<span>91년생</span>&nbsp;|
-							<span>남</span>
+							<span>개발자</span>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<span class="icono-mail"></span>
-							djkim1991@naver.com
+							<i class="fas fa-fw fa-envelope"></i>
+							<span>djkim1991@naver.com</span>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<span class="icono-display"></span>
-							https://github.com/djkim1991
+							<i class="fab fa-github"></i>
+							<a href="https://github.com/djkim1991">github</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<span class="icono-display"></span>
-							https://dororongju.tistory.com/
+							<i class="fas fa-fw fa-window-restore"></i>
+							<a href="https://dororongju.tistory.com">tistory(blog)</a>
 						</td>
 					</tr>
 				</table>
 			</div>
+		</div>
 
-			<div class="panel-1">
+		<div class="row">
+			<div class="profile col-lg-8 mb-4">
 				<span class="title">학력</span>
 				<table class="info">
 					<colgroup>
-						<col style="width: 200px;">
-						<col style="width: 80px;">
-						<col style="width: 200px;">
+						<col style="width: 200px;" />
+						<col style="width: 80px;" />
+						<col style="width: 200px;" />
 					</colgroup>
 					<tr>
-						<th>재학기간</th>
+						<th>재학 기간</th>
 						<th colspan="2">구분</th>
 						<th>전공</th>
 					</tr>
 					<tr>
-						<td>2018/09</td>
-						<td>재학중</td>
-						<td>특수 대학원</td>
+						<td>2018/09 ~ 2020/08</td>
+						<td>수료</td>
+						<td>대학원</td>
 						<td>인공지능공학과</td>
 					</tr>
 					<tr>
@@ -95,15 +94,55 @@
 					</tr>
 				</table>
 			</div>
+		</div>
 
-			<div class="panel-1">
+		<div class="row">
+			<div class="profile col-lg-8 mb-4">
+				<span class="title">경력</span>
+				<table class="info">
+					<colgroup>
+						<col style="width: 200px;" />
+						<col style="width: 120px;" />
+						<col style="width: 80px;" />
+						<col />
+					</colgroup>
+					<tr>
+						<th>재직 기간</th>
+						<th>회사</th>
+						<th>직급</th>
+						<th>업무</th>
+					</tr>
+					<tr>
+						<td>2020/01 ~</td>
+						<td>dktechin</td>
+						<td>팀원</td>
+						<td>카카오 계열사 서비스 개발 및 운영</td>
+					</tr>
+					<tr>
+						<td>2017/12 ~ 2019/12</td>
+						<td>애니모비</td>
+						<td>주임</td>
+						<td>다양한 고객사 서비스 개발 및 운영</td>
+					</tr>
+					<tr>
+						<td>2017/05 ~ 2017/12</td>
+						<td>새얀아이엔씨</td>
+						<td>사원</td>
+						<td>현대모비스 사내 서비스 운영</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="profile col-lg-8 mb-4">
 				<span class="title">자격증</span>
 				<table class="info">
 					<colgroup>
-						<col style="width: 100px;">
-						<col style="width: 150px;">
-						<col>
-						<col style="width: 100px;">
+						<col style="width: 100px;" />
+						<col style="width: 150px;" />
+						<col />
+						<col style="width: 100px;" />
 					</colgroup>
 					<tr>
 						<th>취득일</th>
@@ -120,6 +159,6 @@
 				</table>
 			</div>
 		</div>
-	</section>
-</body>
+	</div>
+</div>
 </html>

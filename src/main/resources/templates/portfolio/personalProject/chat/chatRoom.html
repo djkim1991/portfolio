@@ -1,20 +1,23 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout/layout}">
+<head>
+	<link rel="stylesheet" th:href="@{/css/portfolio/personalProject/chat/chatRoom.css}"/>
 
-<head th:replace="common/commonHead::commonHead"></head>
+	<script th:src="@{/js/portfolio/personalProject/chat/chatRoom.js}"></script>
+</head>
 
-<link rel="stylesheet" th:href="@{/css/portfolio/personalProject/chat/chatRoom.css}"/>
-<script th:src="@{/js/portfolio/personalProject/chat/chatRoom.js}"></script>
+<div layout:fragment="content" class="container-fluid">
+	<div class="container-fluid">
 
-<body>
+		<h3>Toy Project > Chat</h3>
+		<hr />
 
-	<header th:replace="layout/header::header"></header>
-	<section>
-		<div>
-			<div class="title">
-				<span>&lt; CHAT /&gt;</span>
-			</div>
+		<!-- Content Row -->
+		<div class="row">
 
-			<div class="panel-1">
+			<div class="col-lg-7 mb-4">
 				<div class="chat_room_wrap">
 					<div class="list">
 						<ul>
@@ -37,14 +40,15 @@
 								</div>-->
 							</li>
 
-<!--							<li class="create-room">-->
-<!--								<div id="createRoomBtn">CREATE ROOM</div>-->
-<!--							</li>-->
+							<!--							<li class="create-room">-->
+							<!--								<div id="createRoomBtn">CREATE ROOM</div>-->
+							<!--							</li>-->
 						</ul>
 					</div>
 				</div>
 			</div>
+
 		</div>
-	</section>
-</body>
+	</div>
+</div>
 </html>

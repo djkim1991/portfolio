@@ -155,7 +155,7 @@ const SnakeGame = (function(){
         TB = 1;
     }
 
-    $(document).on('click', '.btn', function(){
+    $(document).on('click', '.key-btn', function(){
         let key = $(this).attr('data-key');
 
         if(key === "up")
@@ -174,21 +174,21 @@ const SnakeGame = (function(){
     function initEvent() {
         // KEY UP
         $(document).on('keyup', 'body', function(){
-            $('.btn').removeClass('on');
+            $('.key-btn').removeClass('on');
         });
 
         // KEY DOWN
         $(document).on('keydown', 'body', function(event){
-            if(event.key === 'w' || event.key === 'W') {
+            if(event.key === 'w' || event.key === 'W' || event.key === 'ㅈ') {
                 $('#up_btn').addClass('on');
                 up();
-            }else if(event.key === 's' || event.key === 'S') {
+            }else if(event.key === 's' || event.key === 'S' || event.key === 'ㄴ') {
                 $('#down_btn').addClass('on');
                 down();
-            }else if(event.key === 'a' || event.key === 'A') {
+            }else if(event.key === 'a' || event.key === 'A' || event.key === 'ㅁ') {
                 $('#left_btn').addClass('on');
                 left();
-            }else if(event.key === 'd' || event.key === 'D') {
+            }else if(event.key === 'd' || event.key === 'D' || event.key === 'ㅇ') {
                 $('#right_btn').addClass('on');
                 right();
             }
@@ -226,23 +226,18 @@ const SnakeGame = (function(){
 
     // 점수 저장
     function saveScore() {
-        let nickName;
-        do {
-            nickName = $.trim(prompt("랭킹 등록을 원하시면 닉네임을 입력해 주세요.(15자 이내)"));
+        const nickName = $.trim(prompt("랭킹 등록을 원하시면 닉네임을 입력해 주세요.")).substr(0, 10);
 
-            if(nickName.length > 15)
-                alert('15자 이내로 입력해 주세요.');
-
-        }while (nickName.length > 15 );
-
-        if(typeof nickName !== "undefined" && nickName !== "") {
-            const url = "/personalProject/miniGame/saveScore";
-            const data = {
-                "score":score,
-                "nickName":nickName
-            };
-            AjaxDJ.submit(url, data, function () {location.reload();},function () {});
+        if (!nickName) {
+            return;
         }
+
+        const url = "/personalProject/miniGame/saveScore";
+        const data = {
+            "score": score,
+            "nickName": nickName
+        };
+        AjaxDJ.submit(url, data, function () {location.reload();},function () {});
     }
 
     return {

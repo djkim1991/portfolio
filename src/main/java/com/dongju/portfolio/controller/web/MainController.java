@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Slf4j
 public class MainController {
 
-    @GetMapping(value = {"", "/", "/main"})
+    @GetMapping(value = {"", "/", "home"})
     public String main(Model model) {
         log.info("access home");
 
-        return "main";
+        return "index";
     }
 }

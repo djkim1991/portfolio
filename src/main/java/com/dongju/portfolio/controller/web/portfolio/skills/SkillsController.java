@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/skills")
 public class SkillsController {
 
-    @GetMapping(value = {"", "/"})
-    public String main(Model model) {
+    @GetMapping
+    public String main() {
 
         return "portfolio/skills/skills";
     }

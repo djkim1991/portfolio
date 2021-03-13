@@ -33,13 +33,10 @@ const Chat = (function(){
 
     // setNickName
     function setNickName() {
-        do{
-            nickName = $.trim(prompt("닉네임을 입력해 주세요.(15자 이내)"));
-
-            if(nickName.length > 15)
-                alert('15자 이내로 입력해 주세요.');
-
-        }while (StrDJ.isEmpty(nickName) || nickName.length > 15);
+        nickName = $.trim(prompt("닉네임을 입력해 주세요."));
+        if(!nickName) {
+            nickName = '이름 없음 '+Math.floor(Math.random()*(901)) + 100;;
+        }
     }
 
     // websocket connect

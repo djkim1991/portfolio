@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Controller
 @Slf4j
+@Controller
 @RequiredArgsConstructor
 @RequestMapping("/personalProject")
 public class PersonalProjectController {
@@ -23,13 +23,13 @@ public class PersonalProjectController {
     private final ChatRoomService chatRoomService;
     private final GameScoreService gameScoreService;
 
-    @GetMapping(value = {"", "/"})
-    public String main(Model model) {
+    @GetMapping
+    public String main() {
 
         return "portfolio/personalProject/personalProject";
     }
 
-    @GetMapping(value = {"/snakeGame"})
+    @GetMapping("/snakeGame")
     public String snakeGame(Model model) {
         List<GameScoreDto> gameScoreDtoList = gameScoreService.list();
 
@@ -38,7 +38,7 @@ public class PersonalProjectController {
         return "portfolio/personalProject/snakeGame/snakeGame";
     }
 
-    @GetMapping(value = {"/chat/chatRoom"})
+    @GetMapping("/chat/chatRoom")
     public String chatRoom(Model model) {
         List<ChatRoomDto> chatRoomDtoList = chatRoomService.list();
 
@@ -47,7 +47,7 @@ public class PersonalProjectController {
         return "portfolio/personalProject/chat/chatRoom";
     }
 
-    @GetMapping(value = {"/chat/{uid}"})
+    @GetMapping("/chat/{uid}")
     public String chat(Model model, @PathVariable(value = "uid") Long uid) {
         ChatRoomDto chatRoomDto = chatRoomService.findByUid(uid);
 
@@ -56,7 +56,7 @@ public class PersonalProjectController {
         return "portfolio/personalProject/chat/chat";
     }
 
-    @GetMapping(value = {"/survey/surveyList"})
+    @GetMapping("/survey/surveyList")
     public String surveyList(Model model) {
         List<ChatRoomDto> chatRoomDtoList = chatRoomService.list();
 
@@ -65,8 +65,8 @@ public class PersonalProjectController {
         return "portfolio/personalProject/survey/surveyList";
     }
 
-    @GetMapping(value = {"/survey/create"})
-    public String createSurvey(Model model) {
+    @GetMapping("/survey/create")
+    public String createSurvey() {
 
         return "portfolio/personalProject/survey/create";
     }

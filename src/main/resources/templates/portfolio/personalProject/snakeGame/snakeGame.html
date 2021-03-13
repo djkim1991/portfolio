@@ -1,65 +1,80 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout/layout}">
+<head>
+	<link rel="stylesheet" th:href="@{/css/portfolio/personalProject/snakeGame/snakeGame.css}"/>
+	<script th:src="@{/js/portfolio/personalProject/snakeGame/snakeGame.js}"></script>
+</head>
 
-<head th:replace="common/commonHead::commonHead"></head>
+<div layout:fragment="content" class="container-fluid">
+	<div class="container-fluid">
 
-<link rel="stylesheet" th:href="@{/css/portfolio/personalProject/snakeGame/snakeGame.css}"/>
-<script th:src="@{/js/portfolio/personalProject/snakeGame/snakeGame.js}"></script>
+		<h3>Toy Project > Snake Game</h3>
+		<hr />
 
-<body>
-	<header th:replace="layout/header::header"></header>
-	<section>
-		<div>
-			<div class="title">
-				<span>&lt; Snake Game /&gt;</span>
-			</div>
-
-			<div class="panel-1">
-				<div class="snake_wrap">
-
-					<div class='game'>
-						<div class="info">
-							<button id='startBtn'>시작</button>
-							<span class="info grey">점수 : <span id='score'>0</span></span>
-						</div>
-						<div>
-							<table id='snakeTable'>
-							</table>
-						</div>
+		<!-- Content Row -->
+		<div class="row">
+			<div class="col-lg-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">게임</h6>
 					</div>
+					<div class="card-body">
+						<div class="snake_wrap">
 
-					<div class='controller'>
-						<table>
-							<tr>
-								<td></td><td id='up_btn' class='btn' data-key='up'>W</td><td></td>
-							</tr>
-							<tr>
-								<td id='left_btn' class='btn' data-key='left'>A</td><td id='down_btn' class='btn' data-key='down'>S</td>
-								<td id='right_btn' class='btn' data-key='right'>D</td>
-							</tr>
-						</table>
+							<div class="game">
+								<div class="info">
+									<button id="startBtn" class="btn btn-primary">시작</button>
+									<span class="info btn" style="float: right;">점수 : <span id='score'>0</span></span>
+								</div>
+								<div>
+									<table id="snakeTable">
+									</table>
+								</div>
+							</div>
+
+							<div class='controller'>
+								<table>
+									<colgroup>
+										<col style="width: 50px;"/>
+										<col style="width: 50px;"/>
+										<col style="width: 50px;"/>
+									</colgroup>
+									<tr>
+										<td></td>
+										<td id='up_btn' class='key-btn' data-key='up'>W</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td id='left_btn' class='key-btn' data-key='left'>A</td>
+										<td id='down_btn' class='key-btn' data-key='down'>S</td>
+										<td id='right_btn' class='key-btn' data-key='right'>D</td>
+									</tr>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="panel-1">
-				<div class="title">Ranking</div>
-				<ul>
-					<li th:if="${gameScoreDtoList.size() == 0}">
-						<span th:text="${'순위'}" th:style="${'display:inline-block; width:50px;'}"></span>
-						<span th:text="${'점수'}" th:style="${'display:inline-block; width:50px;'}"></span>
-						<span th:text="${'닉네임'}"></span>
-					</li>
-					<li th:each="gameScoreDto, iter : ${gameScoreDtoList}">
-						<span th:text="${iter.index+1+'등'}"></span>
-						<span th:text="${gameScoreDto.getScore()+'점'}"></span>
-						<span th:text="${gameScoreDto.getNickName()}"></span>
-					</li>
-					<li th:if="${gameScoreDtoList.size() == 0}">
-						<span>등록된 순위 정보가 없습니다.</span>
-					</li>
-				</ul>
+			<div class="col-lg-6 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">Ranking TOP 10</h6>
+					</div>
+					<div class="card-body">
+						<p class="text-gray-800 p-3 m-0" th:each="gameScoreDto, iter : ${gameScoreDtoList}">
+							<span class="btn" th:classappend="${iter.index} < 3 ? 'btn-success' : ''" th:text="${iter.index+1+'등'}"></span>
+							<span class="btn" th:text="${gameScoreDto.getNickName()}"></span>
+							<span class="btn" style="float: right;" th:text="${gameScoreDto.getScore()+'점'}"></span>
+						</p>
+						<p class="text-gray-800 p-3 m-0" th:if="${gameScoreDtoList.size() == 0}">
+							<span>등록된 순위 정보가 없습니다.</span>
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
-	</section>
-</body>
+	</div>
+</div>
 </html>
